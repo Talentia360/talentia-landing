@@ -323,7 +323,13 @@ index.html
         .pricing-card h3 {
             font-size: 1.8rem;
             color: var(--royal-blue-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card p.plan-subtitle {
             margin-bottom: 1rem;
+            font-style: italic;
+            color: var(--text-color);
         }
 
         .pricing-card .price {
@@ -352,6 +358,15 @@ index.html
         .pricing-card ul li i {
             color: var(--green-success);
             margin-right: 0.8rem;
+            min-width: 20px;
+        }
+
+        .pricing-card ul li i.fa-times-circle {
+            color: var(--red-error);
+        }
+        
+        .pricing-card ul li i.fa-gift {
+            color: var(--gold-dark);
         }
 
         .pricing-card .btn {
@@ -382,20 +397,14 @@ index.html
             align-items: center;
         }
 
-        .testimonial-card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border: 3px solid var(--gold-dark);
-        }
+        /* Img styles removed as requested */
 
         .testimonial-card p {
             font-style: italic;
             margin-bottom: 1rem;
             color: var(--dark-gray);
             flex-grow: 1;
+            font-size: 1.1rem;
         }
 
         .testimonial-card .author {
@@ -778,12 +787,13 @@ index.html
                 <div class="pricing-card">
                     <div>
                         <h3>BÁSICO</h3>
-                        <div class="price">R$ 97</div>
+                        <div class="price">R$ 59</div>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> IA com personalização básica</li>
-                            <li><i class="fas fa-check-circle"></i> 50 prompts prontos</li>
-                            <li><i class="fas fa-check-circle"></i> Suporte via e-mail</li>
-                            <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
+                            <li><i class="fas fa-check-circle"></i> Assistente com 3 botões de apoios extras</li>
+                            <li><i class="fas fa-check-circle"></i> Prompt exclusivo do nicho</li>
+                            <li><i class="fas fa-check-circle"></i> Design padrão</li>
+                            <li><i class="fas fa-check-circle"></i> Acesso vitalício & Sem mensalidade</li>
+                            <li style="opacity: 0.7;"><i class="fas fa-times-circle" style="color: var(--red-error);"></i> Sem personalizações posteriores</li>
                         </ul>
                     </div>
                     <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
@@ -793,13 +803,14 @@ index.html
                 <div class="pricing-card">
                     <div>
                         <h3>START</h3>
-                        <div class="price">R$ 197</div>
+                        <p class="plan-subtitle">Ideal para quem quer começar</p>
+                        <div class="price">R$ 99</div>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> IA personalizada intermediária</li>
-                            <li><i class="fas fa-check-circle"></i> 100 prompts prontos</li>
-                            <li><i class="fas fa-check-circle"></i> Suporte WhatsApp</li>
-                            <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
-                            <li><i class="fas fa-check-circle"></i> 1 sessão de onboarding</li>
+                            <li><i class="fas fa-check-circle"></i> Assistente com 5 botões de apoios extras</li>
+                            <li><i class="fas fa-check-circle"></i> Prompt exclusivo do nicho</li>
+                            <li><i class="fas fa-check-circle"></i> Design padrão</li>
+                            <li><i class="fas fa-check-circle"></i> Acesso vitalício & Sem mensalidade</li>
+                            <li><i class="fas fa-check-circle"></i> Personalizações no 1º mês</li>
                         </ul>
                     </div>
                     <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
@@ -807,17 +818,18 @@ index.html
 
                 <!-- PRO (Mais Popular) -->
                 <div class="pricing-card popular">
-                    <span class="badge">MAIS POPULAR</span>
+                    <span class="badge">MAIS VENDIDO</span>
                     <div>
                         <h3>PRO</h3>
-                        <div class="price">R$ 397</div>
+                        <p class="plan-subtitle">Melhor custo-benefício</p>
+                        <div class="price">R$ 149</div>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> IA totalmente personalizada</li>
-                            <li><i class="fas fa-check-circle"></i> 200 prompts prontos</li>
-                            <li><i class="fas fa-check-circle"></i> Suporte prioritário WhatsApp</li>
+                            <li><i class="fas fa-check-circle"></i> 10 botões de apoios extras</li>
+                            <li><i class="fas fa-check-circle"></i> Prompt exclusivo + otimização</li>
+                            <li><i class="fas fa-check-circle"></i> Design do avatar personalizado</li>
+                            <li><i class="fas fa-check-circle"></i> Atualização do assistente por 3 meses</li>
                             <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
-                            <li><i class="fas fa-check-circle"></i> 3 sessões de consultoria</li>
-                            <li><i class="fas fa-check-circle"></i> Atualizações premium</li>
+                            <li><i class="fas fa-check-circle"></i> Ajuste de tom (formal/simples/etc)</li>
                         </ul>
                     </div>
                     <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
@@ -827,15 +839,16 @@ index.html
                 <div class="pricing-card">
                     <div>
                         <h3>PREMIUM</h3>
-                        <div class="price">R$ 697</div>
+                        <p class="plan-subtitle">Para quem quer o melhor</p>
+                        <div class="price">R$ 239</div>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> IA ultra personalizada</li>
-                            <li><i class="fas fa-check-circle"></i> Prompts ilimitados</li>
-                            <li><i class="fas fa-check-circle"></i> Suporte VIP 24/7</li>
-                            <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
-                            <li><i class="fas fa-check-circle"></i> 6 sessões de consultoria</li>
-                            <li><i class="fas fa-check-circle"></i> Atualizações exclusivas</li>
-                            <li><i class="fas fa-check-circle"></i> Integração com ferramentas</li>
+                            <li><i class="fas fa-check-circle"></i> 15 botões de apoios extras</li>
+                            <li><i class="fas fa-check-circle"></i> Prompt totalmente do zero</li>
+                            <li><i class="fas fa-check-circle"></i> Design + avatar alta qualidade</li>
+                            <li><i class="fas fa-check-circle"></i> Atualizações por 3 meses</li>
+                            <li><i class="fas fa-check-circle"></i> Ajuste completo de linguagem/persona</li>
+                            <li><i class="fas fa-gift" style="color: var(--gold-dark);"></i> <b>Bônus:</b> Conteúdo master sobre Prompts</li>
+                            <li><i class="fas fa-gift" style="color: var(--gold-dark);"></i> <b>Bônus:</b> 10 Prompts Gratuitos</li>
                         </ul>
                     </div>
                     <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
@@ -850,17 +863,14 @@ index.html
             <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/80/FFD700/003D82?text=MS" alt="Avatar Mariana S.">
-                    <p>"Economizei 20 horas por semana! O TalentIA revolucionou minha rotina de RH."</p>
-                    <span class="author">Mariana S., Coordenadora de RH</span>
+                    <p>"Economizei 20 horas por semana! O TalentIA revolucionou minha rotina."</p>
+                    <span class="author">Mariana S., Coordenadora</span>
                 </div>
                 <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/80/FFD700/003D82?text=CP" alt="Avatar Carlos P.">
                     <p>"Minha produtividade triplicou. Agora crio conteúdo em minutos."</p>
                     <span class="author">Carlos P., Consultor</span>
                 </div>
                 <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/80/FFD700/003D82?text=AL" alt="Avatar Ana L.">
                     <p>"Melhor investimento que fiz. A IA entende exatamente meu negócio."</p>
                     <span class="author">Ana L., Empreendedora</span>
                 </div>
@@ -998,6 +1008,5 @@ index.html
     </script>
 </body>
 </html>
-     
 
-   
+
