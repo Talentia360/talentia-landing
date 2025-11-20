@@ -4,8 +4,28 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TalentIA - Sua IA Personalizada para RH</title>
+    <title>TalentIA - Sua IA Personalizada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* CSS Variables */
+        :root {
+            --royal-blue-dark: #003D82;
+            --royal-blue-medium: #0047AB;
+            --gold-light: #FFD700;
+            --gold-dark: #FFA500;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+            --dark-gray: #333333;
+            --text-color: #555555;
+            --whatsapp-green: #25D366;
+            --red-error: #dc3545;
+            --green-success: #28a745;
+        }
+
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,23 +33,81 @@ index.html
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
+            color: var(--text-color);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.8rem; line-height: 1.2; }
+        h2 { font-size: 2.2rem; line-height: 1.3; }
+        h3 { font-size: 1.8rem; }
+        p { margin-bottom: 1rem; }
+
+        a {
+            text-decoration: none;
+            color: var(--royal-blue-medium);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.5rem;
         }
 
-        /* Header/Hero Section */
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--gold-dark);
+            color: var(--royal-blue-dark);
+            border: 2px solid var(--gold-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--royal-blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--royal-blue-dark);
+            font-size: 2.5rem;
+        }
+
+        /* Header - Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--royal-blue-dark) 0%, var(--royal-blue-medium) 100%);
+            color: var(--white);
+            padding: 6rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -40,855 +118,886 @@ index.html
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 L 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>') repeat;
             opacity: 0.3;
+            z-index: 0;
         }
 
-        .logo {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #fbbf24;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .hero .container {
             position: relative;
             z-index: 1;
+        }
+
+        .hero .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
         }
 
         .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
 
-        .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1.2s ease;
+        .hero .subheadline {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255,255,255,0.9);
         }
 
-        .cta-buttons {
+        .hero .cta-buttons {
             display: flex;
-            gap: 20px;
             justify-content: center;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1.4s ease;
         }
 
-        .btn {
-            padding: 15px 40px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background: #fbbf24;
-            color: #1e3a8a;
-            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
-        }
-
-        .btn-primary:hover {
-            background: #f59e0b;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.6);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #1e3a8a;
-            transform: translateY(-3px);
-        }
-
-        /* Problem/Solution Section */
+        /* Problem vs Solution Section */
         .problem-solution {
-            padding: 80px 20px;
-            background: #f9fafb;
+            padding: 5rem 0;
+            background-color: var(--light-gray);
         }
 
-        .comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
+        .problem-solution .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
         }
 
-        .comparison-card {
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        .problem-solution .column {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: left;
         }
 
-        .problem-card {
-            background: #fee2e2;
-            border-left: 5px solid #ef4444;
+        .problem-solution .column h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
-        .solution-card {
-            background: #d1fae5;
-            border-left: 5px solid #10b981;
-        }
-
-        .comparison-card h3 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-
-        .comparison-card ul {
+        .problem-solution .column ul {
             list-style: none;
             padding: 0;
         }
 
-        .comparison-card li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
+        .problem-solution .column ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
         }
 
-        .problem-card li::before {
-            content: '✗';
-            position: absolute;
-            left: 0;
-            color: #ef4444;
-            font-weight: bold;
-            font-size: 1.2em;
+        .problem-solution .column ul li i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
         }
 
-        .solution-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
+        .problem-solution .column.problems h3 { color: var(--red-error); }
+        .problem-solution .column.problems li i { color: var(--red-error); }
+
+        .problem-solution .column.solutions h3 { color: var(--green-success); }
+        .problem-solution .column.solutions li i { color: var(--green-success); }
 
         /* Benefits Section */
         .benefits {
-            padding: 80px 20px;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #1e3a8a;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            color: #6b7280;
-            margin-bottom: 50px;
+            padding: 5rem 0;
+            background-color: var(--white);
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .benefit-card {
-            padding: 30px;
-            border-radius: 15px;
-            background: #f9fafb;
-            border: 2px solid #e5e7eb;
-            transition: all 0.3s ease;
+            background-color: var(--light-gray);
+            padding: 2rem;
+            border-radius: 10px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
-            border-color: #3b82f6;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        .benefit-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
+        .benefit-card i {
+            font-size: 3rem;
+            color: var(--gold-dark);
+            margin-bottom: 1rem;
         }
 
         .benefit-card h3 {
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            color: #1e3a8a;
+            font-size: 1.4rem;
+            color: var(--royal-blue-dark);
+            margin-bottom: 0.8rem;
         }
 
-        /* Pricing Section */
+        .benefit-card p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Pricing Table */
         .pricing {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
+            padding: 5rem 0;
+            background-color: var(--royal-blue-dark);
+            color: var(--white);
+        }
+
+        .pricing .section-title {
+            color: var(--gold-light);
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .pricing-card {
-            background: white;
-            color: #333;
-            padding: 40px;
-            border-radius: 15px;
+            background-color: var(--white);
+            color: var(--dark-gray);
+            padding: 2.5rem;
+            border-radius: 10px;
             text-align: center;
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .pricing-card.popular {
+            border: 3px solid var(--gold-dark);
             transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
-        .pricing-card.featured {
-            background: #fbbf24;
-            color: #1e3a8a;
-            transform: scale(1.08);
-            border: 3px solid #f59e0b;
-        }
-
-        .pricing-card.featured::before {
-            content: 'MAIS POPULAR';
+        .pricing-card.popular .badge {
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1e3a8a;
-            color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
+            top: 0;
+            right: 0;
+            background-color: var(--gold-dark);
+            color: var(--royal-blue-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 0 10px 0 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
         }
 
-        .plan-name {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 15px;
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            color: var(--royal-blue-dark);
+            margin-bottom: 1rem;
         }
 
-        .plan-price {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin-bottom: 1.5rem;
         }
 
-        .plan-period {
-            color: #6b7280;
-            margin-bottom: 20px;
-        }
-
-        .plan-features {
+        .pricing-card ul {
             list-style: none;
             padding: 0;
-            margin: 30px 0;
             text-align: left;
+            margin-bottom: 2rem;
+            flex-grow: 1;
         }
 
-        .plan-features li {
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
+        .pricing-card ul li {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
         }
 
-        .plan-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
+        .pricing-card ul li i {
+            color: var(--green-success);
+            margin-right: 0.8rem;
         }
 
-        /* Testimonials */
+        .pricing-card .btn {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        /* Social Proof Section */
         .testimonials {
-            padding: 80px 20px;
-            background: #f9fafb;
+            padding: 5rem 0;
+            background-color: var(--white);
         }
 
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 2rem;
         }
 
         .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
+            background-color: var(--light-gray);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 15px;
         }
 
-        .author-avatar {
-            width: 50px;
-            height: 50px;
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: #3b82f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2em;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--gold-dark);
         }
 
-        .author-info h4 {
-            margin-bottom: 5px;
-            color: #1e3a8a;
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            flex-grow: 1;
         }
 
-        .author-info p {
-            color: #6b7280;
-            font-size: 0.9em;
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--royal-blue-dark);
+            margin-top: auto;
         }
 
         /* FAQ Section */
         .faq {
-            padding: 80px 20px;
-            background: white;
+            padding: 5rem 0;
+            background-color: var(--royal-blue-dark);
+            color: var(--white);
         }
 
-        .faq-list {
+        .faq .section-title {
+            color: var(--gold-light);
+        }
+
+        .accordion {
             max-width: 800px;
-            margin: 40px auto 0;
+            margin: 0 auto;
         }
 
-        .faq-item {
-            margin-bottom: 20px;
-            border: 2px solid #e5e7eb;
-            border-radius: 10px;
+        .accordion-item {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .faq-question {
-            padding: 20px;
-            background: #f9fafb;
+        .accordion-header {
+            padding: 1.2rem 1.5rem;
             cursor: pointer;
-            font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+            background-color: var(--light-gray);
+            transition: background-color 0.3s ease;
         }
 
-        .faq-question:hover {
-            background: #e5e7eb;
+        .accordion-header:hover {
+            background-color: #e0e0e0;
         }
 
-        .faq-answer {
-            padding: 20px;
+        .accordion-header i {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 1.2rem 1.5rem;
+            border-top: 1px solid #eee;
             display: none;
-            background: white;
-            line-height: 1.8;
+            font-size: 1rem;
+            color: var(--text-color);
         }
 
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        .faq-toggle {
-            font-size: 1.5em;
-            color: #3b82f6;
-        }
-
-        /* CTA Final */
-        .cta-final {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            text-align: center;
-            color: #1e3a8a;
-        }
-
-        .cta-final h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        .cta-final p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .guarantee {
-            display: inline-block;
-            background: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: #1e3a8a;
-            color: white;
-            padding: 40px 20px;
+        /* Final CTA Section */
+        .final-cta {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
             text-align: center;
         }
 
-        .footer-links {
+        .final-cta h2 {
+            font-size: 2.8rem;
+            color: var(--royal-blue-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta .urgency-text {
+            font-size: 1.3rem;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .btn-large {
+            padding: 1.2rem 3rem;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .trust-badges {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
+            gap: 2rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
-        .footer-links a {
-            color: white;
-            text-decoration: none;
+        .final-cta .trust-badge {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .final-cta .trust-badge i {
+            color: var(--green-success);
+            font-size: 1.5rem;
+        }
+
+        .final-cta .secondary-whatsapp {
+            font-size: 1.1rem;
+            color: var(--royal-blue-medium);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--royal-blue-dark);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer .contact-info a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .footer .footer-links {
+            margin: 1.5rem 0;
+        }
+
+        .footer .footer-links a {
+            color: var(--white);
+            margin: 0 1rem;
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: #fbbf24;
+        .footer .footer-links a:hover {
+            color: var(--gold-light);
         }
 
-        /* WhatsApp Float Button */
+        .footer .social-icons {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer .social-icons a {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin: 0 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-icons a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer .copyright {
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--whatsapp-green);
+            color: var(--white);
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            cursor: pointer;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 60px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             z-index: 1000;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            transition: transform 0.3s ease;
             animation: pulse 2s infinite;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+            animation: none;
         }
 
         @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .hero { padding: 4rem 0; }
+            .hero .logo { font-size: 2.8rem; }
+            .hero .tagline { font-size: 1.2rem; }
+            .hero .subheadline { font-size: 1.1rem; }
+            .hero .cta-buttons { flex-direction: column; gap: 1rem; }
+            .btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+            .btn-large { font-size: 1.2rem !important; padding: 1rem 2rem !important; }
 
-            .comparison {
+            .problem-solution .content-wrapper { flex-direction: column; }
+            .problem-solution .column { min-width: unset; width: 100%; }
+
+            .benefits-grid, .pricing-grid, .testimonials-grid {
                 grid-template-columns: 1fr;
             }
+            .pricing-card.popular { transform: scale(1); }
 
-            .section-title {
-                font-size: 2em;
-            }
+            .accordion-header { font-size: 1rem; padding: 1rem; }
+            .accordion-content { padding: 1rem; font-size: 0.9rem; }
 
-            .cta-buttons {
-                flex-direction: column;
-            }
+            .final-cta h2 { font-size: 2.2rem; }
+            .final-cta .urgency-text { font-size: 1.1rem; }
+            .final-cta .trust-badges { flex-direction: column; gap: 1rem; }
 
-            .btn {
-                width: 100%;
-            }
+            .footer .logo { font-size: 2rem; }
+            .footer .footer-links a { margin: 0 0.5rem; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 1.8rem; line-height: 50px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .hero { padding: 3rem 0; }
+            .hero .logo { font-size: 2.2rem; }
+            .hero .tagline { font-size: 1rem; }
+            .hero .subheadline { font-size: 0.9rem; }
+            .btn { padding: 0.7rem 1.2rem; font-size: 0.8rem; }
+            .btn-large { font-size: 1rem !important; padding: 0.8rem 1.5rem !important; }
+
+            .section-title { font-size: 2rem; }
+            .problem-solution .column h3 { font-size: 1.5rem; }
+            .problem-solution .column ul li { font-size: 1rem; }
+
+            .benefit-card h3 { font-size: 1.2rem; }
+            .benefit-card p { font-size: 0.9rem; }
+
+            .pricing-card h3 { font-size: 1.5rem; }
+            .pricing-card .price { font-size: 2rem; }
+            .pricing-card ul li { font-size: 0.9rem; }
+
+            .testimonial-card p { font-size: 0.9rem; }
+            .testimonial-card .author { font-size: 0.9rem; }
+
+            .accordion-header { font-size: 0.9rem; padding: 0.8rem; }
+            .accordion-content { padding: 0.8rem; font-size: 0.8rem; }
+
+            .final-cta h2 { font-size: 1.8rem; }
+            .final-cta .urgency-text { font-size: 1rem; }
+            .final-cta .trust-badge { font-size: 0.9rem; }
+
+            .footer .logo { font-size: 1.8rem; }
+            .footer .footer-links { margin: 1rem 0; }
+            .footer .footer-links a { margin: 0 0.3rem; font-size: 0.8rem; }
+            .footer .social-icons a { font-size: 1.5rem; margin: 0 0.5rem; }
+            .footer .copyright { font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <header class="hero">
         <div class="container">
-            <div class="logo">✨ TalentIA</div>
-            <h1>Sua IA Personalizada para Revolucionar o RH</h1>
-            <p>Automatize processos, economize tempo e tome decisões mais inteligentes com inteligência artificial treinada especialmente para você</p>
+            <div class="logo">TALENTIA</div>
+            <p class="tagline">Sua IA Personalizada</p>
+            <h1>Transforme Seu Trabalho com Inteligência Artificial Personalizada</h1>
+            <p class="subheadline">O TalentIA é uma solução de inteligência artificial personalizada, projetada para profissionais e empreendedores que buscam aumentar sua produtividade e eficiência.</p>
             <div class="cta-buttons">
-                <a href="https://pay.hotmart.com/SEU-LINK-AQUI" class="btn btn-primary">🚀 Quero Minha IA Agora</a>
-                <a href="https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20TalentIA" class="btn btn-secondary">💬 Falar com Especialista</a>
+                <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary btn-large">QUERO MEU TALENTIA AGORA</a>
+                <a href="https://wa.me/5511933663336?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20TalentIA" target="_blank" class="btn btn-secondary btn-large">Falar no WhatsApp</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Problem/Solution -->
+    <!-- Problem vs Solution Section -->
     <section class="problem-solution">
         <div class="container">
-            <h2 class="section-title">Você Está Perdendo Tempo com Tarefas Repetitivas?</h2>
-            <div class="comparison">
-                <div class="comparison-card problem-card">
-                    <h3>❌ Sem TalentIA</h3>
+            <h2 class="section-title">Cansado de Perder Tempo com Tarefas Repetitivas?</h2>
+            <div class="content-wrapper">
+                <div class="column problems">
+                    <h3>O Problema</h3>
                     <ul>
-                        <li>Horas criando descrições de vagas</li>
-                        <li>Triagem manual de centenas de currículos</li>
-                        <li>Respostas genéricas aos candidatos</li>
-                        <li>Processos lentos e desorganizados</li>
-                        <li>Decisões baseadas em intuição</li>
-                        <li>Sobrecarga de trabalho operacional</li>
+                        <li><i class="fas fa-circle-xmark"></i> Horas perdidas em tarefas manuais</li>
+                        <li><i class="fas fa-circle-xmark"></i> Dificuldade para criar conteúdo</li>
+                        <li><i class="fas fa-circle-xmark"></i> Decisões sem dados claros</li>
+                        <li><i class="fas fa-circle-xmark"></i> Desorganização constante</li>
                     </ul>
                 </div>
-                <div class="comparison-card solution-card">
-                    <h3>✅ Com TalentIA</h3>
+                <div class="column solutions">
+                    <h3>A Solução TalentIA</h3>
                     <ul>
-                        <li>Vagas criadas em segundos</li>
-                        <li>Triagem automática e inteligente</li>
-                        <li>Comunicação personalizada em escala</li>
-                        <li>Processos ágeis e padronizados</li>
-                        <li>Decisões baseadas em dados</li>
-                        <li>Foco em estratégia e pessoas</li>
+                        <li><i class="fas fa-circle-check"></i> Automação inteligente</li>
+                        <li><i class="fas fa-circle-check"></i> Conteúdo profissional em minutos</li>
+                        <li><i class="fas fa-circle-check"></i> Análises instantâneas e precisas</li>
+                        <li><i class="fas fa-circle-check"></i> Planejamento estratégico otimizado</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
+    <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title">8 Benefícios que Vão Transformar Seu RH</h2>
-            <p class="section-subtitle">Descubra como a TalentIA pode revolucionar sua rotina</p>
+            <h2 class="section-title">O Que Você Ganha com o TalentIA</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">⚡</div>
+                    <i class="fas fa-clock"></i>
                     <h3>Economia de Tempo</h3>
-                    <p>Reduza em até 80% o tempo gasto em tarefas operacionais</p>
+                    <p>Até 15 horas por semana dedicadas ao que realmente importa.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Precisão nas Contratações</h3>
-                    <p>Identifique os melhores talentos com análise inteligente</p>
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Ideias Diárias</h3>
+                    <p>Conteúdo criativo e inovador sob demanda para suas necessidades.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Redução de Custos</h3>
-                    <p>Economize com processos mais eficientes</p>
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Precificação Inteligente</h3>
+                    <p>Calcule valores de serviços e produtos com critérios técnicos e estratégicos.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">📊</div>
-                    <h3>Decisões Baseadas em Dados</h3>
-                    <p>Relatórios e insights automáticos</p>
+                    <i class="fas fa-list-check"></i>
+                    <h3>Organização Total</h3>
+                    <p>Planeje seu dia, projetos e tarefas com a inteligência da IA.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🤖</div>
-                    <h3>Automação Inteligente</h3>
-                    <p>IA treinada especificamente para seu negócio</p>
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Análises Rápidas</h3>
+                    <p>Obtenha insights e relatórios complexos em questão de segundos.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">📱</div>
-                    <h3>Acesso 24/7</h3>
-                    <p>Sua IA disponível a qualquer hora, em qualquer lugar</p>
+                    <i class="fas fa-headset"></i>
+                    <h3>Suporte 24/7</h3>
+                    <p>Atendimento direto via WhatsApp para tirar suas dúvidas.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🎓</div>
-                    <h3>Treinamento Incluso</h3>
-                    <p>Aprenda a usar todo o potencial da ferramenta</p>
+                    <i class="fas fa-infinity"></i>
+                    <h3>Acesso Vitalício</h3>
+                    <p>Pague uma vez e use sua IA personalizada para sempre, sem mensalidades.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🔒</div>
-                    <h3>Segurança e Privacidade</h3>
-                    <p>Seus dados protegidos com criptografia</p>
+                    <i class="fas fa-rocket"></i>
+                    <h3>Atualizações Incluídas</h3>
+                    <p>Sua IA evolui e se aprimora junto com as inovações tecnológicas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- Pricing Table -->
     <section class="pricing">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Escolha Seu Plano</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Investimento que se paga em semanas</p>
+            <h2 class="section-title">Escolha Seu Plano</h2>
             <div class="pricing-grid">
+                <!-- Básico -->
                 <div class="pricing-card">
-                    <div class="plan-name">Starter</div>
-                    <div class="plan-price">R$ 297</div>
-                    <div class="plan-period">Pagamento único</div>
-                    <ul class="plan-features">
-                        <li>IA básica personalizada</li>
-                        <li>3 funcionalidades principais</li>
-                        <li>Suporte por email</li>
-                        <li>1 usuário</li>
-                        <li>Atualizações por 6 meses</li>
-                    </ul>
-                    <a href="https://pay.hotmart.com/SEU-LINK-STARTER" class="btn btn-primary">Começar Agora</a>
+                    <div>
+                        <h3>BÁSICO</h3>
+                        <div class="price">R$ 97</div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> IA com personalização básica</li>
+                            <li><i class="fas fa-check-circle"></i> 50 prompts prontos</li>
+                            <li><i class="fas fa-check-circle"></i> Suporte via e-mail</li>
+                            <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
+                        </ul>
+                    </div>
+                    <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
                 </div>
 
-                <div class="pricing-card featured">
-                    <div class="plan-name">Pro</div>
-                    <div class="plan-price">R$ 597</div>
-                    <div class="plan-period">Pagamento único</div>
-                    <ul class="plan-features">
-                        <li>IA completa personalizada</li>
-                        <li>Todas as funcionalidades</li>
-                        <li>Suporte prioritário</li>
-                        <li>Até 5 usuários</li>
-                        <li>Atualizações vitalícias</li>
-                        <li>Treinamento ao vivo</li>
-                        <li>Integrações avançadas</li>
-                    </ul>
-                    <a href="https://pay.hotmart.com/SEU-LINK-PRO" class="btn btn-primary">Quero o Pro</a>
+                <!-- Start -->
+                <div class="pricing-card">
+                    <div>
+                        <h3>START</h3>
+                        <div class="price">R$ 197</div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> IA personalizada intermediária</li>
+                            <li><i class="fas fa-check-circle"></i> 100 prompts prontos</li>
+                            <li><i class="fas fa-check-circle"></i> Suporte WhatsApp</li>
+                            <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
+                            <li><i class="fas fa-check-circle"></i> 1 sessão de onboarding</li>
+                        </ul>
+                    </div>
+                    <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
                 </div>
 
-                <div class="pricing-card">
-                    <div class="plan-name">Business</div>
-                    <div class="plan-price">R$ 997</div>
-                    <div class="plan-period">Pagamento único</div>
-                    <ul class="plan-features">
-                        <li>Tudo do Pro +</li>
-                        <li>Usuários ilimitados</li>
-                        <li>Consultoria personalizada</li>
-                        <li>Customizações exclusivas</li>
-                        <li>Suporte 24/7</li>
-                        <li>Implementação assistida</li>
-                    </ul>
-                    <a href="https://pay.hotmart.com/SEU-LINK-BUSINESS" class="btn btn-primary">Falar com Vendas</a>
+                <!-- PRO (Mais Popular) -->
+                <div class="pricing-card popular">
+                    <span class="badge">MAIS POPULAR</span>
+                    <div>
+                        <h3>PRO</h3>
+                        <div class="price">R$ 397</div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> IA totalmente personalizada</li>
+                            <li><i class="fas fa-check-circle"></i> 200 prompts prontos</li>
+                            <li><i class="fas fa-check-circle"></i> Suporte prioritário WhatsApp</li>
+                            <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
+                            <li><i class="fas fa-check-circle"></i> 3 sessões de consultoria</li>
+                            <li><i class="fas fa-check-circle"></i> Atualizações premium</li>
+                        </ul>
+                    </div>
+                    <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
                 </div>
 
+                <!-- Premium -->
                 <div class="pricing-card">
-                    <div class="plan-name">Enterprise</div>
-                    <div class="plan-price">Sob Consulta</div>
-                    <div class="plan-period">Solução corporativa</div>
-                    <ul class="plan-features">
-                        <li>Solução 100% customizada</li>
-                        <li>Infraestrutura dedicada</li>
-                        <li>SLA garantido</li>
-                        <li>Gerente de conta dedicado</li>
-                        <li>Integrações sob medida</li>
-                        <li>Treinamento in-company</li>
-                    </ul>
-                    <a href="https://wa.me/5511999999999?text=Quero%20saber%20sobre%20o%20plano%20Enterprise" class="btn btn-primary">Solicitar Proposta</a>
+                    <div>
+                        <h3>PREMIUM</h3>
+                        <div class="price">R$ 697</div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> IA ultra personalizada</li>
+                            <li><i class="fas fa-check-circle"></i> Prompts ilimitados</li>
+                            <li><i class="fas fa-check-circle"></i> Suporte VIP 24/7</li>
+                            <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
+                            <li><i class="fas fa-check-circle"></i> 6 sessões de consultoria</li>
+                            <li><i class="fas fa-check-circle"></i> Atualizações exclusivas</li>
+                            <li><i class="fas fa-check-circle"></i> Integração com ferramentas</li>
+                        </ul>
+                    </div>
+                    <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Social Proof Section -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"A TalentIA reduziu nosso tempo de triagem em 75%. Agora consigo focar no que realmente importa: as pessoas!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h4>Mariana Silva</h4>
-                            <p>Gerente de RH - Tech Solutions</p>
-                        </div>
-                    </div>
+                    <img src="https://via.placeholder.com/80/FFD700/003D82?text=MS" alt="Avatar Mariana S.">
+                    <p>"Economizei 20 horas por semana! O TalentIA revolucionou minha rotina de RH."</p>
+                    <span class="author">Mariana S., Coordenadora de RH</span>
                 </div>
-
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Investimento que se pagou em menos de 1 mês. A automação é impressionante e a personalização faz toda diferença."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">R</div>
-                        <div class="author-info">
-                            <h4>Roberto Costa</h4>
-                            <p>Diretor de Pessoas - Startup XYZ</p>
-                        </div>
-                    </div>
+                    <img src="https://via.placeholder.com/80/FFD700/003D82?text=CP" alt="Avatar Carlos P.">
+                    <p>"Minha produtividade triplicou. Agora crio conteúdo em minutos."</p>
+                    <span class="author">Carlos P., Consultor</span>
                 </div>
-
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Finalmente uma IA que entende as necessidades do RH brasileiro. Suporte excelente e resultados rápidos!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <h4>Ana Paula</h4>
-                            <p>Coordenadora de RH - Varejo Nacional</p>
-                        </div>
-                    </div>
+                    <img src="https://via.placeholder.com/80/FFD700/003D82?text=AL" alt="Avatar Ana L.">
+                    <p>"Melhor investimento que fiz. A IA entende exatamente meu negócio."</p>
+                    <span class="author">Ana L., Empreendedora</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
             <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Como funciona a personalização da IA?</span>
-                        <span class="faq-toggle">+</span>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Como funciona o acesso? <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">
-                        Após a compra, você receberá um questionário detalhado sobre seu negócio, processos e necessidades. Nossa equipe treina a IA especificamente para seu contexto, garantindo respostas e automações alinhadas com sua realidade.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Preciso de conhecimentos técnicos para usar?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Não! A TalentIA foi desenvolvida para ser intuitiva. Incluímos treinamento completo e suporte para garantir que você aproveite todos os recursos, mesmo sem experiência técnica.
+                    <div class="accordion-content">
+                        Após a compra, você recebe um PDF com o link de acesso à sua IA personalizada, credenciais (se aplicável) e um manual completo de uso para começar imediatamente.
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Quanto tempo leva para implementar?</span>
-                        <span class="faq-toggle">+</span>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Preciso de conhecimento técnico para usar? <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">
-                        O processo de personalização leva de 3 a 7 dias úteis. Após isso, você já pode começar a usar imediatamente. Planos Business e Enterprise têm implementação assistida.
+                    <div class="accordion-content">
+                        Não! O TalentIA foi desenvolvido para ser intuitivo e fácil de usar. Você recebe instruções passo a passo e suporte para qualquer dúvida.
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Meus dados estão seguros?</span>
-                        <span class="faq-toggle">+</span>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Funciona no celular? <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">
-                        Sim! Utilizamos criptografia de ponta a ponta e seguimos todas as normas da LGPD. Seus dados nunca são compartilhados e você tem controle total sobre as informações.
+                    <div class="accordion-content">
+                        Sim! Você pode acessar sua IA personalizada de qualquer dispositivo (computador, tablet ou celular) que tenha conexão com a internet.
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Posso cancelar ou pedir reembolso?</span>
-                        <span class="faq-toggle">+</span>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Tem garantia? <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">
-                        Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos 100% do seu investimento, sem perguntas. Sua satisfação é nossa prioridade.
+                    <div class="accordion-content">
+                        Oferecemos 7 dias de garantia total. Se por qualquer motivo você não estiver satisfeito, devolvemos seu dinheiro sem burocracia.
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>A IA substitui a equipe de RH?</span>
-                        <span class="faq-toggle">+</span>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Como é o suporte? <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">
-                        Não! A TalentIA é uma ferramenta para POTENCIALIZAR sua equipe, automatizando tarefas operacionais para que vocês possam focar em estratégia, relacionamento e decisões importantes.
+                    <div class="accordion-content">
+                        O suporte é direto comigo via WhatsApp: <a href="https://wa.me/5511933663336" target="_blank" style="color: var(--royal-blue-medium); text-decoration: underline;">11 93366-3336</a>. Estou aqui para ajudar!
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Posso mudar de plano depois? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        Sim! Você pode fazer upgrade para um plano superior a qualquer momento. Entre em contato para mais detalhes sobre como realizar a mudança.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Final -->
-    <section class="cta-final">
+    <!-- Final CTA Section -->
+    <section class="final-cta">
         <div class="container">
-            <h2>🚀 Pronto para Revolucionar Seu RH?</h2>
-            <p>Junte-se a centenas de profissionais que já estão economizando tempo e tomando decisões mais inteligentes</p>
-            <a href="https://pay.hotmart.com/SEU-LINK-AQUI" class="btn btn-primary" style="font-size: 1.3em; padding: 20px 50px;">Começar Agora - Oferta Especial</a>
-            <div class="guarantee">
-                🛡️ Garantia de 7 dias - Risco Zero
+            <h2>Pronto Para Transformar Seu Trabalho?</h2>
+            <p class="urgency-text">Vagas limitadas para personalização completa - Garanta já a sua!</p>
+            <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary btn-large">GARANTIR MEU TALENTIA AGORA</a>
+            <div class="trust-badges">
+                <div class="trust-badge"><i class="fas fa-lock"></i> Pagamento Seguro</div>
+                <div class="trust-badge"><i class="fas fa-shield-alt"></i> Garantia 7 Dias</div>
+                <div class="trust-badge"><i class="fas fa-headset"></i> Suporte Incluso</div>
             </div>
+            <p><a href="https://wa.me/5511933663336?text=Olá!%20Tenho%20dúvidas%20sobre%20o%20TalentIA" target="_blank" class="secondary-whatsapp">Ainda tem dúvidas? Fale no WhatsApp</a></p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-links">
-                <a href="mailto:contato@talentia.com.br">📧 contato@talentia.com.br</a>
-                <a href="https://wa.me/5511999999999">📱 WhatsApp</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Uso</a>
+            <div class="logo">TALENTIA</div>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:talentiaia360@gmail.com">talentiaia360@gmail.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/5511933663336" target="_blank">11 93366-3336</a></p>
             </div>
-            <p>&copy; 2024 TalentIA - Todos os direitos reservados</p>
-            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">CNPJ: 00.000.000/0001-00</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a>
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="copyright">© 2025 TalentIA. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20TalentIA" class="whatsapp-float" target="_blank">
-        💬
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511933663336?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20TalentIA" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const isActive = item.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-toggle').textContent = '+';
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                    question.querySelector('.faq-toggle').textContent = '−';
-                }
-            });
-        });
+        // FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+
+                    // Close all other open accordions
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== this && otherHeader.classList.contains('active')) {
+                            otherHeader.classList.remove('active');
+                            otherHeader.nextElementSibling.style.display = 'none';
+                            otherHeader.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
                     });
-                }
+
+                    // Toggle current accordion
+                    this.classList.toggle('active');
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.display = 'block';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
             });
         });
     </script>
 </body>
 </html>
+     
+
+   
