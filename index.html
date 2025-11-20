@@ -2,1011 +2,1020 @@ index.html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TalentIA - Sua IA Personalizada</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* CSS Variables */
-        :root {
-            --royal-blue-dark: #003D82;
-            --royal-blue-medium: #0047AB;
-            --gold-light: #FFD700;
-            --gold-dark: #FFA500;
-            --white: #ffffff;
-            --light-gray: #f4f4f4;
-            --dark-gray: #333333;
-            --text-color: #555555;
-            --whatsapp-green: #25D366;
-            --red-error: #dc3545;
-            --green-success: #28a745;
-        }
-
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--white);
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-        }
-
-        h1 { font-size: 2.8rem; line-height: 1.2; }
-        h2 { font-size: 2.2rem; line-height: 1.3; }
-        h3 { font-size: 1.8rem; }
-        p { margin-bottom: 1rem; }
-
-        a {
-            text-decoration: none;
-            color: var(--royal-blue-medium);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.9rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            text-align: center;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .btn-primary {
-            background-color: var(--gold-dark);
-            color: var(--royal-blue-dark);
-            border: 2px solid var(--gold-dark);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--gold-light);
-            border-color: var(--gold-light);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--white);
-            color: var(--royal-blue-dark);
-            transform: translateY(-2px);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--royal-blue-dark);
-            font-size: 2.5rem;
-        }
-
-        /* Header - Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--royal-blue-dark) 0%, var(--royal-blue-medium) 100%);
-            color: var(--white);
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 L 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>') repeat;
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--gold-light);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero .tagline {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--gold-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-        }
-
-        .hero .subheadline {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .hero .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        /* Problem vs Solution Section */
-        .problem-solution {
-            padding: 5rem 0;
-            background-color: var(--light-gray);
-        }
-
-        .problem-solution .content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-
-        .problem-solution .column {
-            flex: 1;
-            min-width: 300px;
-            background-color: var(--white);
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            text-align: left;
-        }
-
-        .problem-solution .column h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .problem-solution .column ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .problem-solution .column ul li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            color: var(--dark-gray);
-        }
-
-        .problem-solution .column ul li i {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .problem-solution .column.problems h3 { color: var(--red-error); }
-        .problem-solution .column.problems li i { color: var(--red-error); }
-
-        .problem-solution .column.solutions h3 { color: var(--green-success); }
-        .problem-solution .column.solutions li i { color: var(--green-success); }
-
-        /* Benefits Section */
-        .benefits {
-            padding: 5rem 0;
-            background-color: var(--white);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .benefit-card {
-            background-color: var(--light-gray);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        .benefit-card i {
-            font-size: 3rem;
-            color: var(--gold-dark);
-            margin-bottom: 1rem;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.4rem;
-            color: var(--royal-blue-dark);
-            margin-bottom: 0.8rem;
-        }
-
-        .benefit-card p {
-            font-size: 1rem;
-            color: var(--text-color);
-        }
-
-        /* Pricing Table */
-        .pricing {
-            padding: 5rem 0;
-            background-color: var(--royal-blue-dark);
-            color: var(--white);
-        }
-
-        .pricing .section-title {
-            color: var(--gold-light);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .pricing-card {
-            background-color: var(--white);
-            color: var(--dark-gray);
-            padding: 2.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .pricing-card.popular {
-            border: 3px solid var(--gold-dark);
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .pricing-card.popular .badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: var(--gold-dark);
-            color: var(--royal-blue-dark);
-            padding: 0.5rem 1rem;
-            border-radius: 0 10px 0 10px;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            color: var(--royal-blue-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-card p.plan-subtitle {
-            margin-bottom: 1rem;
-            font-style: italic;
-            color: var(--text-color);
-        }
-
-        .pricing-card .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gold-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .pricing-card ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .pricing-card ul li {
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            color: var(--text-color);
-        }
-
-        .pricing-card ul li i {
-            color: var(--green-success);
-            margin-right: 0.8rem;
-            min-width: 20px;
-        }
-
-        .pricing-card ul li i.fa-times-circle {
-            color: var(--red-error);
-        }
-        
-        .pricing-card ul li i.fa-gift {
-            color: var(--gold-dark);
-        }
-
-        .pricing-card .btn {
-            width: 100%;
-            margin-top: auto;
-        }
-
-        /* Social Proof Section */
-        .testimonials {
-            padding: 5rem 0;
-            background-color: var(--white);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background-color: var(--light-gray);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Img styles removed as requested */
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
-            flex-grow: 1;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-card .author {
-            font-weight: 700;
-            color: var(--royal-blue-dark);
-            margin-top: auto;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 5rem 0;
-            background-color: var(--royal-blue-dark);
-            color: var(--white);
-        }
-
-        .faq .section-title {
-            color: var(--gold-light);
-        }
-
-        .accordion {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .accordion-item {
-            background-color: var(--white);
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .accordion-header {
-            padding: 1.2rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1.1rem;
-            background-color: var(--light-gray);
-            transition: background-color 0.3s ease;
-        }
-
-        .accordion-header:hover {
-            background-color: #e0e0e0;
-        }
-
-        .accordion-header i {
-            transition: transform 0.3s ease;
-        }
-
-        .accordion-header.active i {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            padding: 1.2rem 1.5rem;
-            border-top: 1px solid #eee;
-            display: none;
-            font-size: 1rem;
-            color: var(--text-color);
-        }
-
-        /* Final CTA Section */
-        .final-cta {
-            padding: 5rem 0;
-            background-color: var(--light-gray);
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            font-size: 2.8rem;
-            color: var(--royal-blue-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .final-cta .urgency-text {
-            font-size: 1.3rem;
-            color: var(--gold-dark);
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
-
-        .final-cta .btn-large {
-            padding: 1.2rem 3rem;
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-        }
-
-        .final-cta .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .final-cta .trust-badge {
-            font-size: 1.1rem;
-            color: var(--dark-gray);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .final-cta .trust-badge i {
-            color: var(--green-success);
-            font-size: 1.5rem;
-        }
-
-        .final-cta .secondary-whatsapp {
-            font-size: 1.1rem;
-            color: var(--royal-blue-medium);
-            font-weight: 600;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--royal-blue-dark);
-            color: var(--white);
-            padding: 3rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .footer .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--gold-light);
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .footer .contact-info p {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer .contact-info a {
-            color: var(--white);
-            text-decoration: underline;
-        }
-
-        .footer .footer-links {
-            margin: 1.5rem 0;
-        }
-
-        .footer .footer-links a {
-            color: var(--white);
-            margin: 0 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer .footer-links a:hover {
-            color: var(--gold-light);
-        }
-
-        .footer .social-icons {
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer .social-icons a {
-            color: var(--white);
-            font-size: 1.8rem;
-            margin: 0 0.8rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer .social-icons a:hover {
-            color: var(--gold-light);
-        }
-
-        .footer .copyright {
-            margin-top: 2rem;
-            color: rgba(255,255,255,0.7);
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--whatsapp-green);
-            color: var(--white);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 2rem;
-            line-height: 60px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 1000;
-            transition: transform 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            animation: none;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .hero { padding: 4rem 0; }
-            .hero .logo { font-size: 2.8rem; }
-            .hero .tagline { font-size: 1.2rem; }
-            .hero .subheadline { font-size: 1.1rem; }
-            .hero .cta-buttons { flex-direction: column; gap: 1rem; }
-            .btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
-            .btn-large { font-size: 1.2rem !important; padding: 1rem 2rem !important; }
-
-            .problem-solution .content-wrapper { flex-direction: column; }
-            .problem-solution .column { min-width: unset; width: 100%; }
-
-            .benefits-grid, .pricing-grid, .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            .pricing-card.popular { transform: scale(1); }
-
-            .accordion-header { font-size: 1rem; padding: 1rem; }
-            .accordion-content { padding: 1rem; font-size: 0.9rem; }
-
-            .final-cta h2 { font-size: 2.2rem; }
-            .final-cta .urgency-text { font-size: 1.1rem; }
-            .final-cta .trust-badges { flex-direction: column; gap: 1rem; }
-
-            .footer .logo { font-size: 2rem; }
-            .footer .footer-links a { margin: 0 0.5rem; }
-            .whatsapp-float { width: 50px; height: 50px; font-size: 1.8rem; line-height: 50px; }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
-            .hero { padding: 3rem 0; }
-            .hero .logo { font-size: 2.2rem; }
-            .hero .tagline { font-size: 1rem; }
-            .hero .subheadline { font-size: 0.9rem; }
-            .btn { padding: 0.7rem 1.2rem; font-size: 0.8rem; }
-            .btn-large { font-size: 1rem !important; padding: 0.8rem 1.5rem !important; }
-
-            .section-title { font-size: 2rem; }
-            .problem-solution .column h3 { font-size: 1.5rem; }
-            .problem-solution .column ul li { font-size: 1rem; }
-
-            .benefit-card h3 { font-size: 1.2rem; }
-            .benefit-card p { font-size: 0.9rem; }
-
-            .pricing-card h3 { font-size: 1.5rem; }
-            .pricing-card .price { font-size: 2rem; }
-            .pricing-card ul li { font-size: 0.9rem; }
-
-            .testimonial-card p { font-size: 0.9rem; }
-            .testimonial-card .author { font-size: 0.9rem; }
-
-            .accordion-header { font-size: 0.9rem; padding: 0.8rem; }
-            .accordion-content { padding: 0.8rem; font-size: 0.8rem; }
-
-            .final-cta h2 { font-size: 1.8rem; }
-            .final-cta .urgency-text { font-size: 1rem; }
-            .final-cta .trust-badge { font-size: 0.9rem; }
-
-            .footer .logo { font-size: 1.8rem; }
-            .footer .footer-links { margin: 1rem 0; }
-            .footer .footer-links a { margin: 0 0.3rem; font-size: 0.8rem; }
-            .footer .social-icons a { font-size: 1.5rem; margin: 0 0.5rem; }
-            .footer .copyright { font-size: 0.8rem; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>TalentIA360 – IA personalizada para profissionais e empreendedores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="TalentIA360 é uma solução de inteligência artificial personalizada para profissionais e empreendedores que desejam ganhar tempo, organizar o negócio e vender mais com assistentes de IA 24h."
+  />
+  <style>
+    :root {
+      --azul-escuro: #020617;
+      --azul-medio: #0f172a;
+      --azul-claro: #1d4ed8;
+      --dourado: #facc15;
+      --branco: #f9fafb;
+      --cinza: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1f2937 0, #020617 60%);
+      color: var(--branco);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER + MENU FIXO */
+
+    .top-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.9), rgba(15, 23, 42, 0.6));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem 0.6rem;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--dourado);
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--cinza);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    nav a:hover {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--dourado);
+    }
+
+    .nav-cta {
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.78rem;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.6rem 1.25rem 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      animation: fadeIn 0.8s ease-out both;
+    }
+
+    .hero-text {
+      max-width: 640px;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--cinza);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      color: var(--dourado);
+    }
+
+    .hero-subtitle {
+      color: var(--cinza);
+      font-size: 0.98rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #facc15, #eab308);
+      color: #111827;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(250, 204, 21, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(250, 204, 21, 0.35);
+    }
+
+    .btn-outline {
+      border-color: #4b5563;
+      color: var(--branco);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--dourado);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .hero-note {
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--cinza);
+    }
+
+    .hero-side {
+      max-width: 380px;
+      border-radius: 1.1rem;
+      padding: 1.1rem 1.2rem;
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.9rem;
+      color: var(--cinza);
+    }
+
+    .hero-side h3 {
+      font-size: 0.98rem;
+      color: var(--dourado);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-side ul {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .hero-side li {
+      margin-bottom: 0.3rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .hero-side li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--dourado);
+    }
+
+    /* SEÇÕES GERAIS */
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 0 1.25rem 2.5rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+      padding: 1.8rem 1.4rem;
+      border-radius: 1.2rem;
+      background: rgba(15, 23, 42, 0.97);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      animation: fadeInUp 0.7s ease-out both;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--cinza);
+      margin-bottom: 0.4rem;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    section p {
+      font-size: 0.95rem;
+      color: var(--cinza);
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    li {
+      font-size: 0.9rem;
+      color: var(--cinza);
+      margin-bottom: 0.35rem;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--dourado);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.1rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border-radius: 1rem;
+      padding: 1rem 1.05rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 0.9rem;
+      color: var(--cinza);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--dourado);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.75rem;
+      color: var(--cinza);
+      margin-bottom: 0.4rem;
+    }
+
+    .tag span {
+      color: var(--dourado);
+      font-weight: 600;
+    }
+
+    .plan-price {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dourado);
+      margin-top: 0.2rem;
+    }
+
+    .plan-old {
+      font-size: 0.8rem;
+      text-decoration: line-through;
+      color: var(--cinza);
+    }
+
+    .badge-black {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 204, 21, 0.7);
+      background: rgba(250, 204, 21, 0.1);
+      font-size: 0.7rem;
+      color: var(--dourado);
+      margin-left: 0.3rem;
+    }
+
+    .card-footer {
+      margin-top: 0.7rem;
+    }
+
+    .card-footer .btn {
+      font-size: 0.85rem;
+      padding: 0.5rem 1.1rem;
+    }
+
+    /* COMPARATIVO */
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.1rem;
+    }
+
+    .compare-col h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .compare-neg h3 {
+      color: #fb7185;
+    }
+
+    .compare-pos h3 {
+      color: #4ade80;
+    }
+
+    .compare-neg li::before {
+      color: #fb7185;
+    }
+
+    .compare-pos li::before {
+      color: #4ade80;
+    }
+
+    /* DEPOIMENTOS / AFILIADOS / FAQ */
+
+    .quote {
+      font-size: 0.9rem;
+      color: var(--cinza);
+      font-style: italic;
+      margin-bottom: 0.4rem;
+    }
+
+    .quote-name {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .faq-item {
+      margin-bottom: 0.7rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.1rem;
+      color: var(--branco);
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .center p {
+      margin-top: 0.5rem;
+    }
+
+    .cta-buttons {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .small {
+      font-size: 0.8rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+    }
+
+    /* WHATSAPP FLOAT */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      background: #22c55e;
+      color: #f9fafb;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(22, 163, 74, 0.55);
+      z-index: 60;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 15px 36px rgba(22, 163, 74, 0.75);
+    }
+
+    /* ANIMAÇÕES SUAVES */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVO */
+
+    @media (min-width: 840px) {
+      .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 720px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero-title {
+        font-size: 1.95rem;
+      }
+
+      section {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="logo">TALENTIA</div>
-            <p class="tagline">Sua IA Personalizada</p>
-            <h1>Transforme Seu Trabalho com Inteligência Artificial Personalizada</h1>
-            <p class="subheadline">O TalentIA é uma solução de inteligência artificial personalizada, projetada para profissionais e empreendedores que buscam aumentar sua produtividade e eficiência.</p>
-            <div class="cta-buttons">
-                <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary btn-large">QUERO MEU TALENTIA AGORA</a>
-                <a href="https://wa.me/5511933663336?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20TalentIA" target="_blank" class="btn btn-secondary btn-large">Falar no WhatsApp</a>
-            </div>
-        </div>
+  <!-- MENU FIXO -->
+  <div class="top-wrapper">
+    <header>
+      <div class="top-bar">
+        <div class="logo">TALENTIA360 · IA PERSONALIZADA</div>
+        <nav>
+          <a href="#topo">Início</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#ebooks">eBooks</a>
+          <a href="#cursos">Cursos</a>
+          <a href="#packs">Packs</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato" class="nav-cta">Fale conosco</a>
+        </nav>
+      </div>
     </header>
+  </div>
 
-    <!-- Problem vs Solution Section -->
-    <section class="problem-solution">
-        <div class="container">
-            <h2 class="section-title">Cansado de Perder Tempo com Tarefas Repetitivas?</h2>
-            <div class="content-wrapper">
-                <div class="column problems">
-                    <h3>O Problema</h3>
-                    <ul>
-                        <li><i class="fas fa-circle-xmark"></i> Horas perdidas em tarefas manuais</li>
-                        <li><i class="fas fa-circle-xmark"></i> Dificuldade para criar conteúdo</li>
-                        <li><i class="fas fa-circle-xmark"></i> Decisões sem dados claros</li>
-                        <li><i class="fas fa-circle-xmark"></i> Desorganização constante</li>
-                    </ul>
-                </div>
-                <div class="column solutions">
-                    <h3>A Solução TalentIA</h3>
-                    <ul>
-                        <li><i class="fas fa-circle-check"></i> Automação inteligente</li>
-                        <li><i class="fas fa-circle-check"></i> Conteúdo profissional em minutos</li>
-                        <li><i class="fas fa-circle-check"></i> Análises instantâneas e precisas</li>
-                        <li><i class="fas fa-circle-check"></i> Planejamento estratégico otimizado</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <!-- HERO -->
+  <div id="topo" class="hero">
+    <div class="hero-text">
+      <div class="hero-kicker">Assistente de IA 24h para o seu negócio</div>
+      <h1 class="hero-title">
+        TalentIA360: uma <span>solução de IA personalizada</span> para
+        profissionais e empreendedores.
+      </h1>
+      <p class="hero-subtitle">
+        A TalentIA360 cria assistentes de IA exclusivos, pensados para quem faz
+        muita coisa sozinho(a) e precisa ganhar tempo, organizar o negócio e
+        vender mais — sem mensalidade e com acesso vitalício.
+      </p>
+      <div class="hero-cta">
+        <a
+          href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20a%20minha%20IA%20personalizada%20TalentIA360"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Falar no WhatsApp agora
+        </a>
+        <a
+          href="https://go.hotmart.com/S103036656J?dp=1"
+          class="btn btn-outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver ofertas na Hotmart
+        </a>
+      </div>
+      <div class="hero-note">
+        Pagamento único · Acesso vitalício · Sem mensalidade.
+      </div>
+    </div>
+
+    <aside class="hero-side">
+      <h3>O que a sua IA personalizada pode fazer:</h3>
+      <ul>
+        <li>Criar conteúdos completos em segundos.</li>
+        <li>Gerar legendas, ofertas e roteiros prontos.</li>
+        <li>Organizar rotinas, tarefas e checklists.</li>
+        <li>Dar apoio na precificação com base no mercado.</li>
+        <li>Atuar como “funcionária 24h” do seu negócio.</li>
+      </ul>
+    </aside>
+  </div>
+
+  <main>
+    <!-- BENEFÍCIOS GERAIS -->
+    <section id="beneficios">
+      <div class="section-kicker">Por que existe a TalentIA360</div>
+      <h2>Uma IA feita para a realidade de quem empreende na vida real</h2>
+      <p>
+        Em vez de uma IA genérica, você tem uma assistente personalizada que fala
+        como você, entende o seu cliente e acompanha a rotina do seu negócio.
+        Isso significa menos tempo travada na frente da tela e mais tempo
+        executando o que realmente importa.
+      </p>
+      <ul>
+        <li>
+          Pare de começar tudo do zero: use modelos, botões e fluxos prontos.
+        </li>
+        <li>
+          Tenha ideias diárias de conteúdo, ofertas e campanhas em poucos
+          segundos.
+        </li>
+        <li>
+          Use a IA como apoio estratégico no dia a dia, e não só como “brincadeira
+          tecnológica”.
+        </li>
+      </ul>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">O Que Você Ganha com o TalentIA</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Economia de Tempo</h3>
-                    <p>Até 15 horas por semana dedicadas ao que realmente importa.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Ideias Diárias</h3>
-                    <p>Conteúdo criativo e inovador sob demanda para suas necessidades.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-dollar-sign"></i>
-                    <h3>Precificação Inteligente</h3>
-                    <p>Calcule valores de serviços e produtos com critérios técnicos e estratégicos.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-list-check"></i>
-                    <h3>Organização Total</h3>
-                    <p>Planeje seu dia, projetos e tarefas com a inteligência da IA.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Análises Rápidas</h3>
-                    <p>Obtenha insights e relatórios complexos em questão de segundos.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Suporte 24/7</h3>
-                    <p>Atendimento direto via WhatsApp para tirar suas dúvidas.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-infinity"></i>
-                    <h3>Acesso Vitalício</h3>
-                    <p>Pague uma vez e use sua IA personalizada para sempre, sem mensalidades.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Atualizações Incluídas</h3>
-                    <p>Sua IA evolui e se aprimora junto com as inovações tecnológicas.</p>
-                </div>
-            </div>
+    <!-- PRODUTOS PRINCIPAIS -->
+    <section id="produtos">
+      <div class="section-kicker">Soluções principais</div>
+      <h2>Assistentes de IA e chatbots para o seu negócio</h2>
+      <p>
+        A TalentIA360 oferece soluções sob medida, desde assistentes web até
+        chatbots focados em vendas e atendimento. Tudo pensado para o seu nicho,
+        seu tom de voz e o momento do seu negócio.
+      </p>
+
+      <div class="grid grid-2">
+        <!-- Assistente Web -->
+        <div class="card" id="assistente-web">
+          <div class="tag"><span>Assistente Web</span> • IA no navegador</div>
+          <h3>Assistente TalentIA360 Web</h3>
+          <p>
+            Uma assistente de IA personalizada acessível pelo navegador, com
+            botões inteligentes e comandos prontos para o seu dia a dia. Ideal
+            para criar conteúdos, ofertas, roteiros, listas, planejamentos e muito
+            mais.
+          </p>
+          <ul>
+            <li>Botões de conteúdo, oferta, checklist, ideias e estratégia.</li>
+            <li>Linguagem alinhada ao seu jeito de falar com o cliente.</li>
+            <li>Adaptação ao seu nicho e tipo de serviço.</li>
+          </ul>
+          <div class="card-footer">
+            <a
+              href="https://go.hotmart.com/S103036656J?dp=1"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver planos da assistente Web
+            </a>
+          </div>
         </div>
+
+        <!-- Assistente WhatsApp -->
+        <div class="card" id="assistente-whatsapp">
+          <div class="tag">
+            <span>Assistente WhatsApp</span> • Respostas 24h
+          </div>
+          <h3>Assistente para WhatsApp</h3>
+          <p>
+            Uma assistente configurada para apoiar sua comunicação e atendimento
+            pelo WhatsApp, com respostas rápidas, mensagens prontas e apoio na
+            pré-venda, pós-venda e relacionamento.
+          </p>
+          <ul>
+            <li>Mensagens base prontas para personalização.</li>
+            <li>Fluxos de abordagem, follow-up e reengajamento.</li>
+            <li>Texto humanizado, sem parecer robô engessado.</li>
+          </ul>
+          <div class="card-footer">
+            <a
+              href="https://wa.me/5511933663336?text=Oi%2C%20tenho%20interesse%20na%20Assistente%20para%20WhatsApp%20TalentIA360"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quero saber mais no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Chatbot Instagram -->
+        <div class="card" id="chatbot-instagram">
+          <div class="tag">
+            <span>Chatbot Instagram</span> • Direct mais fluido
+          </div>
+          <h3>Chatbot para Instagram</h3>
+          <p>
+            Um fluxo pensado para direcionar quem chega no seu direct, responder
+            dúvidas frequentes, aquecer leads e encaminhar para venda ou agenda.
+          </p>
+          <ul>
+            <li>Respostas estruturadas para dúvidas comuns.</li>
+            <li>Mensagens para stories, direct e comentários.</li>
+            <li>Condução para links estratégicos (WhatsApp, página, Hotmart).</li>
+          </ul>
+        </div>
+
+        <!-- Chatbot Vendas -->
+        <div class="card" id="chatbot-vendas">
+          <div class="tag"><span>Chatbot Vendas</span> • Foco em conversão</div>
+          <h3>Chatbot para Vendas</h3>
+          <p>
+            Estrutura de IA focada em conversão, ajudando você a apresentar
+            benefícios, quebrar objeções e conduzir o cliente até a decisão.
+          </p>
+          <ul>
+            <li>Roteiros de abordagem e fechamento.</li>
+            <li>Mensagens para negociação, objeções e urgência.</li>
+            <li>Aplicável a serviços, infoprodutos ou negócios locais.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- Pricing Table -->
-    <section class="pricing">
-        <div class="container">
-            <h2 class="section-title">Escolha Seu Plano</h2>
-            <div class="pricing-grid">
-                <!-- Básico -->
-                <div class="pricing-card">
-                    <div>
-                        <h3>BÁSICO</h3>
-                        <div class="price">R$ 59</div>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Assistente com 3 botões de apoios extras</li>
-                            <li><i class="fas fa-check-circle"></i> Prompt exclusivo do nicho</li>
-                            <li><i class="fas fa-check-circle"></i> Design padrão</li>
-                            <li><i class="fas fa-check-circle"></i> Acesso vitalício & Sem mensalidade</li>
-                            <li style="opacity: 0.7;"><i class="fas fa-times-circle" style="color: var(--red-error);"></i> Sem personalizações posteriores</li>
-                        </ul>
-                    </div>
-                    <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
-                </div>
+    <!-- EBOOKS -->
+    <section id="ebooks">
+      <div class="section-kicker">Materiais digitais</div>
+      <h2>eBooks TalentIA360</h2>
+      <p>
+        Materiais pensados para te acompanhar na jornada com IA, mesmo quando
+        você está offline. Conteúdo direto ao ponto, focado em aplicação prática.
+      </p>
 
-                <!-- Start -->
-                <div class="pricing-card">
-                    <div>
-                        <h3>START</h3>
-                        <p class="plan-subtitle">Ideal para quem quer começar</p>
-                        <div class="price">R$ 99</div>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Assistente com 5 botões de apoios extras</li>
-                            <li><i class="fas fa-check-circle"></i> Prompt exclusivo do nicho</li>
-                            <li><i class="fas fa-check-circle"></i> Design padrão</li>
-                            <li><i class="fas fa-check-circle"></i> Acesso vitalício & Sem mensalidade</li>
-                            <li><i class="fas fa-check-circle"></i> Personalizações no 1º mês</li>
-                        </ul>
-                    </div>
-                    <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
-                </div>
-
-                <!-- PRO (Mais Popular) -->
-                <div class="pricing-card popular">
-                    <span class="badge">MAIS VENDIDO</span>
-                    <div>
-                        <h3>PRO</h3>
-                        <p class="plan-subtitle">Melhor custo-benefício</p>
-                        <div class="price">R$ 149</div>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> 10 botões de apoios extras</li>
-                            <li><i class="fas fa-check-circle"></i> Prompt exclusivo + otimização</li>
-                            <li><i class="fas fa-check-circle"></i> Design do avatar personalizado</li>
-                            <li><i class="fas fa-check-circle"></i> Atualização do assistente por 3 meses</li>
-                            <li><i class="fas fa-check-circle"></i> Acesso vitalício</li>
-                            <li><i class="fas fa-check-circle"></i> Ajuste de tom (formal/simples/etc)</li>
-                        </ul>
-                    </div>
-                    <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
-                </div>
-
-                <!-- Premium -->
-                <div class="pricing-card">
-                    <div>
-                        <h3>PREMIUM</h3>
-                        <p class="plan-subtitle">Para quem quer o melhor</p>
-                        <div class="price">R$ 239</div>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> 15 botões de apoios extras</li>
-                            <li><i class="fas fa-check-circle"></i> Prompt totalmente do zero</li>
-                            <li><i class="fas fa-check-circle"></i> Design + avatar alta qualidade</li>
-                            <li><i class="fas fa-check-circle"></i> Atualizações por 3 meses</li>
-                            <li><i class="fas fa-check-circle"></i> Ajuste completo de linguagem/persona</li>
-                            <li><i class="fas fa-gift" style="color: var(--gold-dark);"></i> <b>Bônus:</b> Conteúdo master sobre Prompts</li>
-                            <li><i class="fas fa-gift" style="color: var(--gold-dark);"></i> <b>Bônus:</b> 10 Prompts Gratuitos</li>
-                        </ul>
-                    </div>
-                    <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">QUERO ESTE PLANO</a>
-                </div>
-            </div>
+      <div class="grid grid-2">
+        <!-- Ebook 1 -->
+        <div class="card" id="ebook1">
+          <div class="tag"><span>eBook 1</span> • Ativo</div>
+          <h3>eBook – Nome do seu primeiro eBook</h3>
+          <p>
+            Descreva aqui o foco do seu primeiro eBook: pode ser introdução à IA
+            personalizada, organização com IA, funis simples com IA, etc.
+          </p>
+          <ul>
+            <li>Capítulos objetivos e fáceis de aplicar.</li>
+            <li>Voltado para quem está começando com IA.</li>
+            <li>Exemplos práticos para o dia a dia.</li>
+          </ul>
+          <div class="card-footer">
+            <a
+              href="https://go.hotmart.com/S103036656J?dp=1"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver eBook na Hotmart
+            </a>
+          </div>
         </div>
+
+        <!-- Ebook 2 Futuro -->
+        <div class="card" id="ebook2">
+          <div class="tag"><span>eBook 2</span> • Em breve</div>
+          <h3>eBook 2 – Produto futuro</h3>
+          <p>
+            Espaço reservado para o seu próximo eBook. Quando estiver pronto,
+            você só precisa alterar o texto, a chamada e o link.
+          </p>
+          <p class="small" style="margin-top:0.5rem;">
+            Dica: você pode deixar “Em breve” visível ou ocultar esta caixa
+            enquanto o produto ainda não estiver lançado.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Social Proof Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>"Economizei 20 horas por semana! O TalentIA revolucionou minha rotina."</p>
-                    <span class="author">Mariana S., Coordenadora</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Minha produtividade triplicou. Agora crio conteúdo em minutos."</p>
-                    <span class="author">Carlos P., Consultor</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Melhor investimento que fiz. A IA entende exatamente meu negócio."</p>
-                    <span class="author">Ana L., Empreendedora</span>
-                </div>
-            </div>
+    <!-- CURSOS -->
+    <section id="cursos">
+      <div class="section-kicker">Formação e aprofundamento</div>
+      <h2>Cursos e treinamentos TalentIA360</h2>
+      <p>
+        Aqui entram seus cursos, mini-treinamentos e workshops focados em IA,
+        organização, conteúdo, vendas, funis e o que mais você decidir criar.
+      </p>
+      <div class="card">
+        <h3>Curso – Nome do curso principal</h3>
+        <p>
+          Escreva aqui uma descrição breve do seu primeiro curso: para quem é,
+          o que resolve e qual o formato (ao vivo, gravado, aulas curtas etc.).
+        </p>
+        <ul>
+          <li>Explica passo a passo como usar IA a favor do seu negócio.</li>
+          <li>Material de apoio, exemplos práticos e modelos prontos.</li>
+          <li>Acesso pela Hotmart ou outra plataforma que você utilizar.</li>
+        </ul>
+        <div class="card-footer">
+          <a
+            href="https://go.hotmart.com/S103036656J?dp=1"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver detalhes do curso
+          </a>
         </div>
+      </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        Como funciona o acesso? <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        Após a compra, você recebe um PDF com o link de acesso à sua IA personalizada, credenciais (se aplicável) e um manual completo de uso para começar imediatamente.
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        Preciso de conhecimento técnico para usar? <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        Não! O TalentIA foi desenvolvido para ser intuitivo e fácil de usar. Você recebe instruções passo a passo e suporte para qualquer dúvida.
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        Funciona no celular? <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        Sim! Você pode acessar sua IA personalizada de qualquer dispositivo (computador, tablet ou celular) que tenha conexão com a internet.
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        Tem garantia? <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        Oferecemos 7 dias de garantia total. Se por qualquer motivo você não estiver satisfeito, devolvemos seu dinheiro sem burocracia.
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        Como é o suporte? <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        O suporte é direto comigo via WhatsApp: <a href="https://wa.me/5511933663336" target="_blank" style="color: var(--royal-blue-medium); text-decoration: underline;">11 93366-3336</a>. Estou aqui para ajudar!
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        Posso mudar de plano depois? <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        Sim! Você pode fazer upgrade para um plano superior a qualquer momento. Entre em contato para mais detalhes sobre como realizar a mudança.
-                    </div>
-                </div>
-            </div>
+    <!-- PACKS -->
+    <section id="packs">
+      <div class="section-kicker">Packs e templates</div>
+      <h2>Packs de prompts, templates e modelos prontos</h2>
+      <p>
+        Para quem quer acelerar o uso da IA, ter ideias na manga e nunca mais
+        ficar travada na hora de criar.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Pack de Prompts TalentIA360</h3>
+          <p>
+            Uma seleção de prompts prontos para conteúdo, ofertas, atendimento,
+            organização e vendas.
+          </p>
+          <ul>
+            <li>Prompts organizados por categoria.</li>
+            <li>Uso simples, direto no ChatGPT ou na sua IA.</li>
+            <li>Ideal para destravar a criatividade.</li>
+          </ul>
         </div>
+
+        <div class="card">
+          <h3>Templates para redes sociais</h3>
+          <p>
+            Ideias de posts, legendas e chamadas já estruturadas para você só
+            adaptar ao seu nicho.
+          </p>
+          <ul>
+            <li>Calendário de conteúdos base.</li>
+            <li>Estruturas de carrosséis e stories.</li>
+            <li>Foco em pequenos empreendedores.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Modelos de fluxos de atendimento</h3>
+          <p>
+            Roteiros prontos para atendimento, follow-up e reengajamento que
+            você pode adaptar à sua realidade.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Pronto Para Transformar Seu Trabalho?</h2>
-            <p class="urgency-text">Vagas limitadas para personalização completa - Garanta já a sua!</p>
-            <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary btn-large">GARANTIR MEU TALENTIA AGORA</a>
-            <div class="trust-badges">
-                <div class="trust-badge"><i class="fas fa-lock"></i> Pagamento Seguro</div>
-                <div class="trust-badge"><i class="fas fa-shield-alt"></i> Garantia 7 Dias</div>
-                <div class="trust-badge"><i class="fas fa-headset"></i> Suporte Incluso</div>
-            </div>
-            <p><a href="https://wa.me/5511933663336?text=Olá!%20Tenho%20dúvidas%20sobre%20o%20TalentIA" target="_blank" class="secondary-whatsapp">Ainda tem dúvidas? Fale no WhatsApp</a></p>
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+      <div class="section-kicker">Resultados reais</div>
+      <h2>O que as pessoas dizem sobre trabalhar com IA personalizada</h2>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="quote">
+            “Eu faço tudo sozinha e a IA virou um divisor de águas. Organiza meu
+            dia, me dá ideias e ainda ajuda com atendimento. Valeu cada centavo.”
+          </div>
+          <div class="quote-name">Cliente TalentIA360</div>
         </div>
+        <div class="card">
+          <div class="quote">
+            “Já paguei caro em ferramenta com mensalidade que entregava muito
+            menos. Aqui paguei uma vez e uso o tempo todo. O custo-benefício é
+            surreal.”
+          </div>
+          <div class="quote-name">Empreendedora digital</div>
+        </div>
+        <div class="card">
+          <div class="quote">
+            “A IA me ajuda com conteúdo, preço, ideias e organização. Sinto que
+            não estou mais sozinha para pensar em tudo.”
+          </div>
+          <div class="quote-name">Profissional autônoma</div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="logo">TALENTIA</div>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:talentiaia360@gmail.com">talentiaia360@gmail.com</a></p>
-                <p>WhatsApp: <a href="https://wa.me/5511933663336" target="_blank">11 93366-3336</a></p>
-            </div>
-            <div class="footer-links">
-                <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a>
-            </div>
-            <div class="social-icons">
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <p class="copyright">© 2025 TalentIA. Todos os direitos reservados.</p>
+    <!-- AFILIADOS -->
+    <section id="afiliados">
+      <div class="section-kicker">Parcerias</div>
+      <h2>Programa de afiliados TalentIA360</h2>
+      <p>
+        Se você gosta do trabalho da TalentIA360, você pode indicar os produtos
+        e ganhar comissões a cada venda realizada pelo seu link.
+      </p>
+      <ul>
+        <li>Percentual de comissão definido por produto.</li>
+        <li>Links rastreados pela Hotmart.</li>
+        <li>Materiais de apoio para divulgação.</li>
+      </ul>
+      <div class="card-footer">
+        <a
+          href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20o%20Programa%20de%20Afiliados%20TalentIA360"
+          class="btn btn-outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Quero saber mais sobre afiliação
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-kicker">FAQ</div>
+      <h2>Perguntas frequentes</h2>
+
+      <div class="faq-item">
+        <strong>Preciso entender muito de tecnologia para usar a IA?</strong>
+        <span>
+          Não. A ideia da TalentIA360 é justamente simplificar. Você recebe
+          botões, modelos e instruções claras para usar no dia a dia, mesmo sem
+          ser “da área de tecnologia”.
+        </span>
+      </div>
+
+      <div class="faq-item">
+        <strong>A IA substitui funcionários?</strong>
+        <span>
+          Não. Ela funciona como apoio, agilizando tarefas repetitivas e te
+          ajudando a pensar, mas não substitui o olhar humano, o relacionamento
+          e as decisões estratégicas.
+        </span>
+      </div>
+
+      <div class="faq-item">
+        <strong>É pagamento único mesmo?</strong>
+        <span>
+          Sim. Os planos da TalentIA360 foram pensados para caber na rotina de
+          quem está começando ou se estruturando: você paga uma vez e tem
+          acesso vitalício ao que adquiriu, sem mensalidade.
+        </span>
+      </div>
+
+      <div class="faq-item">
+        <strong>Como recebo acesso depois de comprar?</strong>
+        <span>
+          Após a confirmação da compra pela Hotmart, você recebe as instruções
+          de acesso por e-mail e/ou WhatsApp, de acordo com o produto
+          adquirido.
+        </span>
+      </div>
+    </section>
+
+    <!-- CTA FINAL / CONTATO -->
+    <section id="contato">
+      <div class="center">
+        <div class="section-kicker">Próximo passo</div>
+        <h2>Pronta para ter uma IA exclusiva ao seu lado?</h2>
+        <p>
+          Se você quer organizar o seu negócio, ganhar tempo e ter uma assistente
+          de IA trabalhando com você 24h, o próximo passo é simples: falar com a
+          TalentIA360 ou garantir sua vaga na Hotmart.
+        </p>
+
+        <div class="cta-buttons">
+          <a
+            href="https://wa.me/5511933663336?text=Oi%2C%20quero%20uma%20IA%20personalizada%20TalentIA360"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar no WhatsApp
+          </a>
+          <a
+            href="https://go.hotmart.com/S103036656J?dp=1"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Comprar agora pela Hotmart
+          </a>
         </div>
-    </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5511933663336?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20TalentIA" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        <p class="small" style="margin-top:1rem;">
+          WhatsApp: <strong>(11) 93366-3336</strong><br />
+          Link Hotmart:
+          <strong>https://go.hotmart.com/S103036656J?dp=1</strong>
+        </p>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // FAQ Accordion Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a
+    href="https://wa.me/5511933663336?text=Oi%2C%20quero%20uma%20IA%20personalizada%20TalentIA360"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+  >
+    💬
+  </a>
 
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const icon = this.querySelector('i');
+  <footer>
+    © <span id="ano"></span> TalentIA360 – IA personalizada para
+    profissionais e empreendedores.
+  </footer>
 
-                    // Close all other open accordions
-                    accordionHeaders.forEach(otherHeader => {
-                        if (otherHeader !== this && otherHeader.classList.contains('active')) {
-                            otherHeader.classList.remove('active');
-                            otherHeader.nextElementSibling.style.display = 'none';
-                            otherHeader.querySelector('i').style.transform = 'rotate(0deg)';
-                        }
-                    });
-
-                    // Toggle current accordion
-                    this.classList.toggle('active');
-                    if (content.style.display === 'block') {
-                        content.style.display = 'none';
-                        icon.style.transform = 'rotate(0deg)';
-                    } else {
-                        content.style.display = 'block';
-                        icon.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-        });
-    </script>
+  <script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
 
 
