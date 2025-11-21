@@ -9,6 +9,7 @@ index.html
     name="description"
     content="TalentIA360 é a inteligência artificial que entende o seu negócio. Assistentes de IA personalizados para profissionais e empreendedores que querem ganhar tempo, organizar o negócio e vender mais."
   />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     :root {
       --azul-escuro: #020617;
@@ -16,6 +17,7 @@ index.html
       --dourado: #facc15;
       --branco: #f9fafb;
       --cinza: #9ca3af;
+      --verde-whats: #25D366;
     }
 
     * {
@@ -120,10 +122,17 @@ index.html
       max-width: 640px;
     }
 
-    .hero-logo {
-      width: 130px;
-      max-width: 40vw;
-      margin-bottom: 1rem;
+    /* LOGO ESTILIZADA EM CSS (Substituindo imagem) */
+    .hero-logo-text {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--dourado);
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      background: linear-gradient(to right, #facc15, #eab308);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-kicker {
@@ -168,6 +177,7 @@ index.html
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
       display: inline-block;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn-primary {
@@ -307,6 +317,10 @@ index.html
     .grid-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
 
     .card {
       background: radial-gradient(circle at top left, #020617, #020617);
@@ -315,10 +329,12 @@ index.html
       border: 1px solid rgba(148, 163, 184, 0.25);
       font-size: 0.9rem;
       color: var(--cinza);
+      display: flex;
+      flex-direction: column;
     }
 
     .card h3 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin-bottom: 0.3rem;
       color: var(--dourado);
     }
@@ -334,6 +350,7 @@ index.html
       font-size: 0.75rem;
       color: var(--cinza);
       margin-bottom: 0.4rem;
+      width: fit-content;
     }
 
     .tag span {
@@ -342,54 +359,62 @@ index.html
     }
 
     .card-footer {
-      margin-top: 0.7rem;
+      margin-top: auto;
+      padding-top: 1rem;
     }
 
     .card-footer .btn {
       font-size: 0.85rem;
       padding: 0.5rem 1.1rem;
+      width: 100%;
+    }
+    
+    /* ESTILO PREÇOS */
+    .price-tag {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--branco);
+        margin: 0.5rem 0;
+    }
+    
+    .price-tag span {
+        font-size: 1rem;
+        color: var(--cinza);
+        font-weight: 400;
+    }
+    
+    .card.popular {
+        border: 1px solid var(--dourado);
+        box-shadow: 0 0 15px rgba(250, 204, 21, 0.15);
+        position: relative;
+    }
+    
+    .popular-badge {
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        background: var(--dourado);
+        color: #000;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
     }
 
     /* COMPARATIVO, DEPOIMENTOS, FAQ */
-
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-      margin-top: 1.1rem;
-    }
-
-    .compare-col h3 {
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .compare-neg h3 {
-      color: #fb7185;
-    }
-
-    .compare-pos h3 {
-      color: #4ade80;
-    }
-
-    .compare-neg li::before {
-      color: #fb7185;
-    }
-
-    .compare-pos li::before {
-      color: #4ade80;
-    }
 
     .quote {
       font-size: 0.9rem;
       color: var(--cinza);
       font-style: italic;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
     }
 
     .quote-name {
       font-size: 0.8rem;
       color: #e5e7eb;
+      font-weight: 600;
     }
 
     .faq-item {
@@ -463,10 +488,13 @@ index.html
       background: #020617;
     }
 
-    .footer-logo {
-      width: 70px;
+    .footer-logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--dourado);
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
       display: block;
-      margin: 0 auto 0.6rem;
     }
 
     /* WHATSAPP FLOAT */
@@ -475,7 +503,7 @@ index.html
       position: fixed;
       right: 1.2rem;
       bottom: 1.2rem;
-      background: #22c55e;
+      background: var(--verde-whats);
       color: #f9fafb;
       width: 52px;
       height: 52px;
@@ -487,10 +515,11 @@ index.html
       text-decoration: none;
       box-shadow: 0 12px 30px rgba(22, 163, 74, 0.55);
       z-index: 60;
+      transition: transform 0.3s ease;
     }
 
     .whatsapp-float:hover {
-      transform: translateY(-1px);
+      transform: translateY(-3px);
       box-shadow: 0 15px 36px rgba(22, 163, 74, 0.75);
     }
 
@@ -538,9 +567,6 @@ index.html
       section {
         padding: 1.5rem 1.2rem;
       }
-      .hero-logo {
-        width: 110px;
-      }
     }
   </style>
 </head>
@@ -553,10 +579,9 @@ index.html
         <nav>
           <a href="#topo">Início</a>
           <a href="#beneficios">Benefícios</a>
+          <a href="#planos">Planos</a>
           <a href="#produtos">Produtos</a>
           <a href="#ebooks">eBooks</a>
-          <a href="#cursos">Cursos</a>
-          <a href="#packs">Packs</a>
           <a href="#depoimentos">Depoimentos</a>
           <a href="#faq">FAQ</a>
           <a href="#contato" class="nav-cta">Fale conosco</a>
@@ -568,11 +593,10 @@ index.html
   <!-- HERO -->
   <div id="topo" class="hero">
     <div class="hero-text">
-      <!-- Troque "talentia-logo.png" pelo nome do arquivo da sua imagem -->
-      <img src="talentia-logo.png" alt="Logo TalentIA360" class="hero-logo" />
+      <!-- Logo em Texto Estilizado -->
+      <div class="hero-logo-text">TALENTIA360</div>
       <div class="hero-kicker">Assistente de IA 24h para o seu negócio</div>
-      <h1 class="hero-title-main">TalentIA360</h1>
-      <p class="hero-slogan">A inteligência artificial que entende o seu negócio.</p>
+      <h1 class="hero-title-main">A inteligência artificial que entende o seu negócio.</h1>
       <p class="hero-subtitle">
         A TalentIA360 cria assistentes de IA exclusivos, pensados para quem faz muita coisa sozinha e precisa
         ganhar tempo, organizar o negócio e vender mais — sem mensalidade e com acesso vitalício ao que adquirir.
@@ -587,7 +611,7 @@ index.html
           Falar no WhatsApp agora
         </a>
         <a
-          href="planos.html"
+          href="#planos"
           class="btn btn-outline"
         >
           Ver planos da assistente
@@ -627,52 +651,103 @@ index.html
       </ul>
     </section>
 
-    <!-- PRODUTOS PRINCIPAIS -->
-    <section id="produtos" class="section-alt">
-      <div class="section-kicker">Soluções principais</div>
-      <h2>Assistentes de IA e chatbots para o seu negócio</h2>
-      <p>
-        A TalentIA360 oferece soluções sob medida, desde assistentes web até chatbots focados em vendas e atendimento.
-        Tudo pensado para o seu nicho, seu tom de voz e o momento do seu negócio.
-      </p>
+    <!-- PLANOS E PREÇOS (NOVA SEÇÃO) -->
+    <section id="planos" class="section-alt">
+      <div class="section-kicker">Investimento Único</div>
+      <h2>Escolha o plano ideal para o seu momento</h2>
+      <p>Sem mensalidades. Acesso vitalício.</p>
 
-      <div class="grid grid-2">
-        <!-- Assistente Web -->
-        <div class="card" id="assistente-web">
-          <div class="tag"><span>Assistente Web</span> • IA no navegador</div>
-          <h3>Assistente TalentIA360 Web</h3>
-          <p>
-            Assistente de IA personalizada acessível pelo navegador, com botões inteligentes e comandos prontos para
-            o seu dia a dia. É o seu principal ponto de partida com a TalentIA360.
-          </p>
+      <div class="grid grid-4">
+        <!-- Básico -->
+        <div class="card">
+          <div class="tag"><span>BÁSICO</span></div>
+          <div class="price-tag">R$ 59</div>
+          <p class="small">Entrada acessível</p>
           <ul>
-            <li>Botões de conteúdo, oferta, checklist, ideias e estratégia.</li>
-            <li>Linguagem alinhada ao seu jeito de falar com o cliente.</li>
-            <li>Adaptação ao seu nicho e tipo de serviço.</li>
+            <li>Assistente com 3 botões extras</li>
+            <li>Prompt exclusivo do nicho</li>
+            <li>Design padrão</li>
+            <li>Acesso vitalício</li>
+            <li style="color: #fb7185;">Sem personalizações posteriores</li>
           </ul>
           <div class="card-footer">
-            <a
-              href="planos.html"
-              class="btn btn-primary"
-            >
-              Ver planos da assistente
-            </a>
+            <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">Quero este</a>
           </div>
         </div>
 
+        <!-- Start -->
+        <div class="card">
+          <div class="tag"><span>START</span></div>
+          <div class="price-tag">R$ 99</div>
+          <p class="small">Para começar bem</p>
+          <ul>
+            <li>Assistente com 5 botões extras</li>
+            <li>Prompt exclusivo do nicho</li>
+            <li>Design padrão</li>
+            <li>Acesso vitalício</li>
+            <li>Personalizações no 1º mês</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">Quero este</a>
+          </div>
+        </div>
+
+        <!-- PRO -->
+        <div class="card popular">
+          <span class="popular-badge">Mais Vendido</span>
+          <div class="tag"><span>PRO</span></div>
+          <div class="price-tag">R$ 149</div>
+          <p class="small">Melhor custo-benefício</p>
+          <ul>
+            <li>10 botões de apoios extras</li>
+            <li>Prompt exclusivo + otimização</li>
+            <li>Avatar personalizado</li>
+            <li>Atualização por 3 meses</li>
+            <li>Ajuste de tom de voz</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">Quero este</a>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="card">
+          <div class="tag"><span>PREMIUM</span></div>
+          <div class="price-tag">R$ 239</div>
+          <p class="small">Experiência completa</p>
+          <ul>
+            <li>15 botões de apoios extras</li>
+            <li>Prompt construído do zero</li>
+            <li>Design alta qualidade</li>
+            <li>Atualizações por 3 meses</li>
+            <li>Ajuste completo de persona</li>
+            <li style="color: var(--dourado);">+ Bônus: Conteúdo Master</li>
+            <li style="color: var(--dourado);">+ 10 Prompts Gratuitos</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">Quero este</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS PRINCIPAIS -->
+    <section id="produtos">
+      <div class="section-kicker">Outras Soluções</div>
+      <h2>Ecossistema TalentIA360</h2>
+      <p>
+        Além da assistente principal, oferecemos soluções específicas para cada canal de venda.
+      </p>
+
+      <div class="grid grid-2">
         <!-- Assistente WhatsApp -->
         <div class="card" id="assistente-whatsapp">
           <div class="tag"><span>Assistente WhatsApp</span> • Em breve</div>
           <h3>Assistente para WhatsApp</h3>
           <p>
             Assistente configurada para apoiar sua comunicação e atendimento pelo WhatsApp, com respostas rápidas,
-            mensagens prontas e apoio na pré-venda, pós-venda e relacionamento.
+            mensagens prontas e apoio na pré-venda.
           </p>
-          <ul>
-            <li>Mensagens base para atendimento e follow-up.</li>
-            <li>Roteiros para reengajar contatos e recuperar oportunidades.</li>
-            <li>Texto humanizado, sem parecer robô engessado.</li>
-          </ul>
           <div class="card-footer">
             <a
               href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20a%20Assistente%20para%20WhatsApp%20TalentIA360"
@@ -680,7 +755,7 @@ index.html
               target="_blank"
               rel="noopener noreferrer"
             >
-              Quero saber mais no Whats
+              Avise-me quando lançar
             </a>
           </div>
         </div>
@@ -693,11 +768,6 @@ index.html
             Fluxos pensados para direcionar quem chega no seu direct, responder dúvidas frequentes, aquecer leads
             e encaminhar para venda ou agenda.
           </p>
-          <ul>
-            <li>Respostas para dúvidas comuns no direct e comentários.</li>
-            <li>Mensagens para stories e chamadas para ação.</li>
-            <li>Condução para WhatsApp, página de vendas ou agenda.</li>
-          </ul>
           <div class="card-footer">
             <a
               href="https://wa.me/5511933663336?text=Oi%2C%20me%20interessei%20no%20Chatbot%20para%20Instagram%20TalentIA360"
@@ -705,32 +775,7 @@ index.html
               target="_blank"
               rel="noopener noreferrer"
             >
-              Falar sobre o chatbot
-            </a>
-          </div>
-        </div>
-
-        <!-- Chatbot Vendas -->
-        <div class="card" id="chatbot-vendas">
-          <div class="tag"><span>Chatbot Vendas</span> • Em breve</div>
-          <h3>Chatbot para Vendas</h3>
-          <p>
-            Estrutura de IA focada em conversão, ajudando você a apresentar benefícios, quebrar objeções e conduzir o
-            cliente até a decisão.
-          </p>
-          <ul>
-            <li>Roteiros de abordagem, objeções e fechamento.</li>
-            <li>Mensagens para criação de urgência e prova social.</li>
-            <li>Aplicável a serviços, infoprodutos e negócios locais.</li>
-          </ul>
-          <div class="card-footer">
-            <a
-              href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20o%20Chatbot%20de%20Vendas%20TalentIA360"
-              class="btn btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Quero detalhes no Whats
+              Avise-me quando lançar
             </a>
           </div>
         </div>
@@ -738,12 +783,11 @@ index.html
     </section>
 
     <!-- EBOOKS -->
-    <section id="ebooks">
+    <section id="ebooks" class="section-alt">
       <div class="section-kicker">Materiais digitais</div>
       <h2>eBooks TalentIA360</h2>
       <p>
-        Materiais pensados para te acompanhar na jornada com IA, mesmo quando você está offline. Conteúdo direto ao ponto,
-        focado em aplicação prática no seu dia a dia.
+        Materiais pensados para te acompanhar na jornada com IA, mesmo quando você está offline.
       </p>
 
       <div class="grid grid-2">
@@ -752,14 +796,8 @@ index.html
           <div class="tag"><span>eBook 1</span> • Em breve</div>
           <h3>eBook – Seu primeiro passo com IA personalizada</h3>
           <p>
-            Espaço reservado para o seu primeiro eBook: introdução à IA personalizada, ideias, exemplos e modelos para
-            quem está começando.
+            Introdução à IA personalizada, ideias, exemplos e modelos para quem está começando.
           </p>
-          <ul>
-            <li>Capítulos objetivos, com foco na prática.</li>
-            <li>Exemplos voltados ao pequeno empreendedor.</li>
-            <li>Aplicação fácil junto da sua assistente TalentIA360.</li>
-          </ul>
           <div class="card-footer">
             <a
               href="https://wa.me/5511933663336?text=Oi%2C%20quero%20informações%20sobre%20o%20eBook%20da%20TalentIA360"
@@ -767,96 +805,15 @@ index.html
               target="_blank"
               rel="noopener noreferrer"
             >
-              Quero saber mais no Whats
+              Entrar na lista de espera
             </a>
           </div>
-        </div>
-
-        <!-- Ebook 2 Futuro -->
-        <div class="card" id="ebook2">
-          <div class="tag"><span>eBook 2</span> • Futuro</div>
-          <h3>eBook 2 – Próximo lançamento</h3>
-          <p>
-            Aqui você poderá colocar seu próximo material digital: avançado, temático ou focado em um nicho específico.
-          </p>
-          <p class="small" style="margin-top:0.5rem;">
-            Quando estiver pronto, basta trocar o texto e o botão pelo link oficial de compra.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CURSOS -->
-    <section id="cursos" class="section-alt">
-      <div class="section-kicker">Formação e aprofundamento</div>
-      <h2>Cursos e treinamentos TalentIA360</h2>
-      <p>
-        Aqui entram seus cursos, mini-treinamentos e workshops focados em IA, organização, conteúdo, vendas e funis.
-        Mesmo que ainda não estejam prontos, o espaço já está reservado.
-      </p>
-      <div class="card">
-        <h3>Curso – Nome do curso principal</h3>
-        <p>
-          Descreva aqui, no futuro, o foco do seu curso principal: para quem é, o que resolve e qual o formato
-          (ao vivo, gravado, aulas curtas etc.).
-        </p>
-        <div class="card-footer">
-          <a
-            href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20os%20cursos%20da%20TalentIA360"
-            class="btn btn-outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Me avise sobre os cursos
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PACKS -->
-    <section id="packs">
-      <div class="section-kicker">Packs e templates</div>
-      <h2>Packs de prompts, templates e modelos prontos</h2>
-      <p>
-        Perfeitos para quem quer acelerar o uso da IA, ter ideias na manga e nunca mais ficar travada na hora de criar.
-      </p>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Pack de Prompts TalentIA360</h3>
-          <p>
-            Uma seleção de prompts prontos para conteúdo, ofertas, atendimento, organização e vendas.
-          </p>
-          <div class="card-footer">
-            <a
-              href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20o%20Pack%20de%20Prompts%20TalentIA360"
-              class="btn btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Quero saber mais
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Templates para redes sociais</h3>
-          <p>
-            Estruturas base para posts, legendas e chamadas, para você adaptar ao seu nicho e estilo.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Modelos de fluxos de atendimento</h3>
-          <p>
-            Roteiros prontos para atendimento, follow-up e reengajamento que você poderá adaptar para seu negócio.
-          </p>
         </div>
       </div>
     </section>
 
     <!-- DEPOIMENTOS -->
-    <section id="depoimentos" class="section-alt">
+    <section id="depoimentos">
       <div class="section-kicker">Resultados reais</div>
       <h2>O que as pessoas dizem sobre trabalhar com IA personalizada</h2>
 
@@ -882,30 +839,6 @@ index.html
           </div>
           <div class="quote-name">Juliana Prado – Consultora Digital</div>
         </div>
-      </div>
-    </section>
-
-    <!-- AFILIADOS -->
-    <section id="afiliados">
-      <div class="section-kicker">Parcerias</div>
-      <h2>Programa de afiliados TalentIA360</h2>
-      <p>
-        Se você gosta do trabalho da TalentIA360, pode indicar os produtos e ganhar comissão a cada venda realizada pelo
-        seu link.
-      </p>
-      <ul>
-        <li>Comissões definidas por produto, com rastreio pela Hotmart.</li>
-        <li>Materiais de apoio para divulgação.</li>
-      </ul>
-      <div class="card-footer">
-        <a
-          href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20o%20Programa%20de%20Afiliados%20TalentIA360"
-          class="btn btn-outline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Quero ser afiliada(o)
-        </a>
       </div>
     </section>
 
@@ -975,7 +908,7 @@ index.html
             Falar no WhatsApp
           </a>
           <a
-            href="planos.html"
+            href="#planos"
             class="btn btn-outline"
           >
             Ver planos da assistente
@@ -999,12 +932,11 @@ index.html
     rel="noopener noreferrer"
     aria-label="Falar no WhatsApp"
   >
-    💬
+    <i class="fab fa-whatsapp"></i>
   </a>
 
   <footer>
-    <!-- mesma imagem do topo, versão pequena -->
-    <img src="talentia-logo.png" alt="TalentIA360" class="footer-logo" />
+    <div class="footer-logo-text">TALENTIA360</div>
     © <span id="ano"></span> TalentIA360 – A inteligência artificial que entende o seu negócio.
   </footer>
 
@@ -1013,6 +945,8 @@ index.html
   </script>
 </body>
 </html>
+  
+
 
 
 
