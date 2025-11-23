@@ -1,77 +1,1020 @@
 index.html
-            <div class="grid-solucoes">
-                
-                <!-- CARD 1: MENTE LITERÁRIA (DESTAQUE) -->
-                <div class="card-solucao">
-                    <div class="tag-solucao destaque">LANÇAMENTO</div>
-                    <h3>Mente Literária 🧠</h3>
-                    <!-- PREÇO COM ESTILO DIRETO -->
-                    <p style="font-size: 1.5rem; font-weight: 700; color: #0056b3; margin-bottom: 10px;">R$ 49,00</p>
-                    <p>Sua IA Mentora de Leitura. Transforma livros em micro-books, gera insights práticos e cria arquivos Word para download.</p>
-                    <ul class="lista-beneficios-solucao">
-                        <li><i class="fas fa-check"></i> Resumos densos e didáticos</li>
-                        <li><i class="fas fa-check"></i> Gera arquivo Word/PDF</li>
-                        <li><i class="fas fa-check"></i> Acesso Vitalício</li>
-                    </ul>
-                    <a href="https://go.hotmart.com/A103081726F?dp=1" target="_blank" class="btn-solucao">
-                        Comprar Agora
-                    </a>
-                </div>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>TalentIA360 – A inteligência artificial que entende o seu negócio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="TalentIA360 é a inteligência artificial que entende o seu negócio. Assistentes de IA personalizados para profissionais e empreendedores que querem ganhar tempo, organizar o negócio e vender mais."
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --azul-escuro: #020617;
+      --azul-medio: #0f172a;
+      --dourado: #facc15;
+      --branco: #f9fafb;
+      --cinza: #9ca3af;
+      --verde-whats: #25D366;
+    }
 
-                <!-- CARD 2: GPT PERSONALIZADO PRO -->
-                <div class="card-solucao">
-                    <div class="tag-solucao">MAIS VENDIDO</div>
-                    <h3>GPT Personalizado PRO 🚀</h3>
-                    <!-- PREÇO COM ESTILO DIRETO -->
-                    <p style="font-size: 1.5rem; font-weight: 700; color: #0056b3; margin-bottom: 10px;">R$ 149,00</p>
-                    <p>A experiência completa. Uma IA construída exclusivamente para o seu negócio com sua marca e tom de voz.</p>
-                    <ul class="lista-beneficios-solucao">
-                        <li><i class="fas fa-check"></i> 10 Botões de Ação</li>
-                        <li><i class="fas fa-check"></i> Avatar + Tom de Voz</li>
-                        <li><i class="fas fa-check"></i> 3 Meses de Suporte</li>
-                    </ul>
-                    <a href="https://go.hotmart.com/I103051202S?dp=1" target="_blank" class="btn-solucao">
-                        Quero o PRO
-                    </a>
-                </div>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-                <!-- CARD 3: GPT START -->
-                <div class="card-solucao">
-                    <h3>GPT Start ✨</h3>
-                    <!-- PREÇO COM ESTILO DIRETO -->
-                    <p style="font-size: 1.5rem; font-weight: 700; color: #0056b3; margin-bottom: 10px;">R$ 99,00</p>
-                    <p>Ideal para começar. Tenha seu próprio assistente configurado com as funções essenciais.</p>
-                    <ul class="lista-beneficios-solucao">
-                        <li><i class="fas fa-check"></i> Configuração Inicial</li>
-                        <li><i class="fas fa-check"></i> Prompt Otimizado</li>
-                        <li><i class="fas fa-check"></i> Entrega Rápida</li>
-                    </ul>
-                    <a href="https://go.hotmart.com/G103036759G?dp=1" target="_blank" class="btn-solucao">
-                        Quero o Start
-                    </a>
-                </div>
+    html {
+      scroll-behavior: smooth;
+    }
 
-                <!-- CARD 4: GPT BÁSICO -->
-                <div class="card-solucao">
-                    <h3>GPT Básico ⚡</h3>
-                    <!-- PREÇO COM ESTILO DIRETO -->
-                    <p style="font-size: 1.5rem; font-weight: 700; color: #0056b3; margin-bottom: 10px;">R$ 29,99</p>
-                    <p>Solução de entrada. Um prompt poderoso para destravar sua produtividade imediatamente.</p>
-                    <ul class="lista-beneficios-solucao">
-                        <li><i class="fas fa-check"></i> Prompt Pronto</li>
-                        <li><i class="fas fa-check"></i> Custo-benefício</li>
-                        <li><i class="fas fa-check"></i> Acesso Imediato</li>
-                    </ul>
-                    <a href="https://go.hotmart.com/S103036656J" target="_blank" class="btn-solucao">
-                        Ver Detalhes
-                    </a>
-                </div>
+    body {
+      background: radial-gradient(circle at top, #1f2937 0, #020617 60%);
+      color: var(--branco);
+      line-height: 1.6;
+    }
 
-            </div>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
+    /* TOPO FIXO */
 
+    .top-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.94), rgba(15, 23, 42, 0.7));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
 
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.7rem 1.25rem 0.6rem;
+    }
 
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
+    .logo-text {
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--dourado);
+      white-space: nowrap;
+    }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--cinza);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
 
+    nav a {
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    nav a:hover {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--dourado);
+    }
+
+    .nav-cta {
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.78rem;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.6rem 1.25rem 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      animation: fadeIn 0.8s ease-out both;
+    }
+
+    .hero-text {
+      max-width: 640px;
+    }
+
+    .hero-logo {
+      width: 130px;
+      max-width: 40vw;
+      margin-bottom: 1rem;
+      display: none; /* Ocultando imagem para usar texto */
+    }
+
+    /* LOGO ESTILIZADA EM CSS */
+    .hero-logo-text {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--dourado);
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      background: linear-gradient(to right, #facc15, #eab308);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--cinza);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title-main {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-slogan {
+      font-size: 1rem;
+      color: var(--dourado);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+      color: var(--cinza);
+      font-size: 0.98rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      display: inline-block;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #facc15, #eab308);
+      color: #111827;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(250, 204, 21, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(250, 204, 21, 0.35);
+    }
+
+    .btn-outline {
+      border-color: #4b5563;
+      color: var(--branco);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--dourado);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .hero-note {
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--cinza);
+    }
+
+    .hero-side {
+      max-width: 380px;
+      border-radius: 1.1rem;
+      padding: 1.1rem 1.2rem;
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.9rem;
+      color: var(--cinza);
+    }
+
+    .hero-side h3 {
+      font-size: 0.98rem;
+      color: var(--dourado);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-side ul {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .hero-side li {
+      margin-bottom: 0.3rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .hero-side li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--dourado);
+    }
+
+    /* SEÇÕES */
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 0 1.25rem 2.5rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+      padding: 1.8rem 1.4rem;
+      border-radius: 1.2rem;
+      background: rgba(15, 23, 42, 0.97);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      animation: fadeInUp 0.7s ease-out both;
+    }
+
+    .section-alt {
+      background: radial-gradient(circle at top, #020617, #020617);
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--cinza);
+      margin-bottom: 0.4rem;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    section p {
+      font-size: 0.95rem;
+      color: var(--cinza);
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    li {
+      font-size: 0.9rem;
+      color: var(--cinza);
+      margin-bottom: 0.35rem;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--dourado);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.1rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border-radius: 1rem;
+      padding: 1rem 1.05rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 0.9rem;
+      color: var(--cinza);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: var(--dourado);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.12rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.75rem;
+      color: var(--cinza);
+      margin-bottom: 0.4rem;
+      width: fit-content;
+    }
+
+    .tag span {
+      color: var(--dourado);
+      font-weight: 600;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    .card-footer .btn {
+      font-size: 0.85rem;
+      padding: 0.5rem 1.1rem;
+      width: 100%;
+    }
+    
+    /* ESTILO PREÇOS */
+    .price-tag {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--branco);
+        margin: 0.5rem 0;
+    }
+    
+    .price-tag span {
+        font-size: 1rem;
+        color: var(--cinza);
+        font-weight: 400;
+    }
+    
+    .card.popular {
+        border: 1px solid var(--dourado);
+        box-shadow: 0 0 15px rgba(250, 204, 21, 0.15);
+        position: relative;
+    }
+    
+    .popular-badge {
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        background: var(--dourado);
+        color: #000;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+    }
+
+    /* COMPARATIVO, DEPOIMENTOS, FAQ */
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.1rem;
+    }
+
+    .compare-col h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .compare-neg h3 {
+      color: #fb7185;
+    }
+
+    .compare-pos h3 {
+      color: #4ade80;
+    }
+
+    .compare-neg li::before {
+      color: #fb7185;
+    }
+
+    .compare-pos li::before {
+      color: #4ade80;
+    }
+
+    .quote {
+      font-size: 0.9rem;
+      color: var(--cinza);
+      font-style: italic;
+      margin-bottom: 0.8rem;
+    }
+
+    .quote-name {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .faq-item {
+      margin-bottom: 0.5rem;
+    }
+
+    details {
+      background: #020617;
+      border-radius: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.65rem 0.85rem;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--branco);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: "＋";
+      margin-right: 0.4rem;
+      color: var(--dourado);
+      font-weight: 700;
+    }
+
+    details[open] summary::before {
+      content: "−";
+    }
+
+    details p {
+      font-size: 0.86rem;
+      color: var(--cinza);
+      margin-top: 0.4rem;
+      padding-left: 1.3rem;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .center p {
+      margin-top: 0.5rem;
+    }
+
+    .cta-buttons {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .small {
+      font-size: 0.8rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+    }
+
+    .footer-logo {
+      width: 70px;
+      display: none;
+    }
+    
+    .footer-logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--dourado);
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      display: block;
+      margin: 0 auto 0.6rem;
+    }
+
+    /* WHATSAPP FLOAT */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      background: var(--verde-whats);
+      color: #f9fafb;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(22, 163, 74, 0.55);
+      z-index: 60;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 36px rgba(22, 163, 74, 0.75);
+    }
+
+    /* ANIMAÇÕES */
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVO */
+
+    @media (min-width: 840px) {
+      .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 720px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .compare-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        justify-content: flex-start;
+      }
+      .hero-title-main {
+        font-size: 2rem;
+      }
+      section {
+        padding: 1.5rem 1.2rem;
+      }
+      .hero-logo {
+        width: 110px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- MENU FIXO -->
+  <div class="top-wrapper">
+    <header>
+      <div class="top-bar">
+        <div class="logo-text">TALENTIA360 · IA PERSONALIZADA</div>
+        <nav>
+          <a href="#topo">Início</a>
+          <a href="#beneficios">Benefícios</a>
+          <a href="#planos">Planos</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#ebooks">eBooks</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato" class="nav-cta">Fale conosco</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- HERO -->
+  <div id="topo" class="hero">
+    <div class="hero-text">
+      <!-- Logo em Texto Estilizado -->
+      <div class="hero-logo-text">TALENTIA360</div>
+      <div class="hero-kicker">Assistente de IA 24h para o seu negócio</div>
+      <h1 class="hero-title-main">A inteligência artificial que entende o seu negócio.</h1>
+      <p class="hero-subtitle">
+        A TalentIA360 cria assistentes de IA exclusivos, pensados para quem faz muita coisa sozinha e precisa
+        ganhar tempo, organizar o negócio e vender mais — sem mensalidade e com acesso vitalício ao que adquirir.
+      </p>
+      <div class="hero-cta">
+        <a
+          href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20a%20minha%20IA%20personalizada%20TalentIA360"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Falar no WhatsApp agora
+        </a>
+        <a
+          href="#planos"
+          class="btn btn-outline"
+        >
+          Ver planos da assistente
+        </a>
+      </div>
+      <div class="hero-note">
+        Pagamento único · Acesso vitalício · Sem mensalidade.
+      </div>
+    </div>
+
+    <aside class="hero-side">
+      <h3>O que a sua IA personalizada pode fazer:</h3>
+      <ul>
+        <li>Criar conteúdos completos em segundos.</li>
+        <li>Gerar legendas, ofertas e roteiros prontos.</li>
+        <li>Organizar rotinas, tarefas e checklists.</li>
+        <li>Dar apoio na precificação com base no mercado.</li>
+        <li>Atuar como “funcionária 24h” do seu negócio.</li>
+      </ul>
+    </aside>
+  </div>
+
+  <main>
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios">
+      <div class="section-kicker">Por que existe a TalentIA360</div>
+      <h2>Uma IA feita para a realidade de quem empreende na vida real</h2>
+      <p>
+        Em vez de uma IA genérica, você tem uma assistente personalizada que fala como você, entende o seu cliente
+        e acompanha a rotina do seu negócio. Isso significa menos tempo travada na frente da tela e mais tempo
+        executando o que realmente importa.
+      </p>
+      <ul>
+        <li>Pare de começar tudo do zero: use modelos, botões e fluxos prontos.</li>
+        <li>Tenha ideias diárias de conteúdo, ofertas e campanhas em poucos segundos.</li>
+        <li>Use a IA como apoio estratégico no dia a dia, e não só como “brincadeira tecnológica”.</li>
+      </ul>
+    </section>
+
+    <!-- PLANOS E PREÇOS (NOVA SEÇÃO) -->
+    <section id="planos" class="section-alt">
+      <div class="section-kicker">Investimento Único</div>
+      <h2>Escolha o plano ideal para o seu momento</h2>
+      <p>Sem mensalidades. Acesso vitalício.</p>
+
+      <div class="grid grid-4">
+        <!-- Básico -->
+        <div class="card">
+          <div class="tag"><span>BÁSICO</span></div>
+          <div class="price-tag">R$ 29,99</div>
+          <p class="small">Entrada acessível</p>
+          <ul>
+            <li>Botões de conteúdo, oferta, checklist, ideias e estratégia.</li>
+            <li>Linguagem alinhada ao seu jeito de falar com o cliente.</li>
+            <li>Adaptação ao seu nicho e tipo de serviço.</li>
+            <li>Assistente com 3 botões extras</li>
+            <li>Prompt exclusivo do nicho</li>
+            <li>Design padrão</li>
+            <li>Acesso vitalício</li>
+            <li style="color: #fb7185;">Sem personalizações posteriores</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://go.hotmart.com/S103036656J?dp=1" target="_blank" class="btn btn-primary">Quero este</a>
+          </div>
+        </div>
+
+        <!-- Start -->
+        <div class="card">
+          <div class="tag"><span>START</span></div>
+          <div class="price-tag">R$ 99</div>
+          <p class="small">Para começar bem</p>
+          <ul>
+            <li>Assistente com 5 botões extras</li>
+            <li>Prompt exclusivo do nicho</li>
+            <li>Design padrão</li>
+            <li>Acesso vitalício</li>
+            <li>Personalizações no 1º mês</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://go.hotmart.com/G103036759G?dp=1" target="_blank" class="btn btn-primary">Quero este</a>
+          </div>
+        </div>
+
+        <!-- PRO -->
+        <div class="card popular">
+          <span class="popular-badge">Mais Vendido</span>
+          <div class="tag"><span>PRO</span></div>
+          <div class="price-tag">R$ 149</div>
+          <p class="small">Melhor custo-benefício</p>
+          <ul>
+            <li>10 botões de apoios extras</li>
+            <li>Prompt exclusivo + otimização</li>
+            <li>Avatar personalizado</li>
+            <li>Atualização por 3 meses</li>
+            <li>Ajuste de tom de voz</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://go.hotmart.com/I103051202S?dp=1" target="_blank" class="btn btn-primary">Quero este</a>
+          </div>
+        </div>
+
+        <!-- Mente Literária -->
+        <div class="card">
+          <div class="tag"><span>MENTE LITERÁRIA</span></div>
+          <div class="price-tag">R$ 49</div>
+          <p class="small">Sua IA Mentora de Leitura</p>
+          <ul>
+            <li>Transforma livros em micro-books</li>
+            <li>Gera insights práticos</li>
+            <li>Cria arquivos Word para download</li>
+            <li>Resumos densos e didáticos</li>
+            <li>Acesso Vitalício</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://go.hotmart.com/A103081726F?dp=1" target="_blank" class="btn btn-primary">Quero este</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS PRINCIPAIS -->
+    <section id="produtos">
+      <div class="section-kicker">Outras Soluções</div>
+      <h2>Ecossistema TalentIA360</h2>
+      <p>
+        Além da assistente principal, oferecemos soluções específicas para cada canal de venda.
+      </p>
+
+      <div class="grid grid-2">
+        <!-- Assistente WhatsApp -->
+        <div class="card" id="assistente-whatsapp">
+          <div class="tag"><span>Assistente WhatsApp</span> • Em breve</div>
+          <h3>Assistente para WhatsApp</h3>
+          <p>
+            Assistente configurada para apoiar sua comunicação e atendimento pelo WhatsApp, com respostas rápidas,
+            mensagens prontas e apoio na pré-venda, pós-venda e relacionamento.
+          </p>
+          <ul>
+            <li>Mensagens base para atendimento e follow-up.</li>
+            <li>Roteiros para reengajar contatos e recuperar oportunidades.</li>
+            <li>Texto humanizado, sem parecer robô engessado.</li>
+          </ul>
+          <div class="card-footer">
+            <a
+              href="https://wa.me/5511933663336?text=Oi%2C%20quero%20saber%20mais%20sobre%20a%20Assistente%20para%20WhatsApp%20TalentIA360"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Avise-me quando lançar
+            </a>
+          </div>
+        </div>
+
+        <!-- Chatbot Instagram -->
+        <div class="card" id="chatbot-instagram">
+          <div class="tag"><span>Chatbot Instagram</span> • Em breve</div>
+          <h3>Chatbot para Instagram</h3>
+          <p>
+            Fluxos pensados para direcionar quem chega no seu direct, responder dúvidas frequentes, aquecer leads
+            e encaminhar para venda ou agenda.
+          </p>
+          <ul>
+            <li>Respostas para dúvidas comuns no direct e comentários.</li>
+            <li>Mensagens para stories e chamadas para ação.</li>
+            <li>Condução para WhatsApp, página de vendas ou agenda.</li>
+          </ul>
+          <div class="card-footer">
+            <a
+              href="https://wa.me/5511933663336?text=Oi%2C%20me%20interessei%20no%20Chatbot%20para%20Instagram%20TalentIA360"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Falar sobre o chatbot
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EBOOKS -->
+    <section id="ebooks" class="section-alt">
+      <div class="section-kicker">Materiais digitais</div>
+      <h2>eBooks TalentIA360</h2>
+      <p>
+        Materiais pensados para te acompanhar na jornada com IA, mesmo quando você está offline. Conteúdo direto ao ponto,
+        focado em aplicação prática no seu dia a dia.
+      </p>
+
+      <div class="grid grid-2">
+        <!-- Ebook 1 -->
+        <div class="card" id="ebook1">
+          <div class="tag"><span>eBook 1</span> • Em breve</div>
+          <h3>eBook – Seu primeiro passo com IA personalizada</h3>
+          <p>
+            Espaço reservado para o seu primeiro eBook: introdução à IA personalizada, ideias, exemplos e modelos para
+            quem está começando.
+          </p>
+          <ul>
+            <li>Capítulos objetivos, com foco na prática.</li>
+            <li>Exemplos voltados ao pequeno empreendedor.</li>
+            <li>Aplicação fácil junto da sua assistente TalentIA360.</li>
+          </ul>
+          <div class="card-footer">
+            <a
+              href="https://wa.me/5511933663336?text=Oi%2C%20quero%20informações%20sobre%20o%20eBook%20da%20TalentIA360"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Entrar na lista de espera
+            </a>
+          </div>
+        </div>
+
+        <!-- Ebook 2 Futuro -->
+        <div class="card" id="ebook2">
+          <div class="tag"><span>eBook 2</span> • Futuro</div>
+          <h3>eBook 2 – Próximo lançamento</h3>
+          <p>
+            Aqui você poderá colocar seu próximo material digital: avançado, temático ou focado em um nicho específico.
+          </p>
+          <p class="small" style="margin-top:0.5rem;">
+            Quando estiver pronto, basta trocar o texto e o botão pelo link oficial de compra.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+      <div class="section-kicker">Resultados reais</div>
+      <h2>O que as pessoas dizem sobre trabalhar com IA personalizada</h2>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="quote">
+            “Eu faço tudo sozinha e a IA virou um divisor de águas. Organiza meu dia,
+            me dá ideias e ainda ajuda com atendimento. Valeu cada centavo.”
+          </div>
+          <div class="quote-name">Ana Ribeiro – Social Media</div>
+        </div>
+        <div class="card">
+          <div class="quote">
+            “Já paguei caro em ferramenta com mensalidade que entregava muito menos.
+            Aqui paguei uma vez e uso o tempo todo. O custo-benefício é surreal.”
+          </div>
+          <div class="quote-name">Caroline Mendes – Esteticista</div>
+        </div>
+        <div class="card">
+          <div class="quote">
+            “A IA me ajuda com conteúdo, preço, ideias e organização. Sinto que não
+            estou mais sozinha para pensar em tudo.”
+          </div>
+          <div class="quote-name">Juliana Prado – Consultora Digital</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-alt">
+      <div class="section-kicker">FAQ</div>
+      <h2>Perguntas frequentes</h2>
+
+      <div class="faq-item">
+        <details>
+          <summary>Preciso entender muito de tecnologia para usar a IA?</summary>
+          <p>
+            Não. A ideia da TalentIA360 é justamente simplificar. Você recebe botões, modelos e instruções claras para
+            usar no dia a dia, mesmo sem ser “da área de tecnologia”.
+          </p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>A IA substitui funcionários?</summary>
+          <p>
+            Não. Ela funciona como apoio, agilizando tarefas repetitivas e te ajudando a pensar, mas não substitui o
+            olhar humano, o relacionamento e as decisões estratégicas.
+          </p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>É pagamento único mesmo?</summary>
+          <p>
+            Sim. Os planos da TalentIA360 foram pensados para caber na rotina de quem está começando ou se estruturando:
+            você paga uma vez e tem acesso vitalício ao produto adquirido, sem mensalidade.
+          </p>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>Como recebo acesso depois de comprar?</summary>
+          <p>
+            Após a confirmação da compra pela Hotmart, você recebe as instruções de acesso por e-mail e/ou WhatsApp,
+            conforme o produto escolhido.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA FINAL / CONTATO -->
+    <section id="contato">
+      <div class="center">
+        <div class="section-kicker">Próximo passo</div>
+        <h2>Pronta para ter uma IA exclusiva ao seu lado?</h2>
+        <p>
+          Se você quer organizar o seu negócio, ganhar tempo e ter uma assistente de IA trabalhando com você 24h,
+          o próximo passo é simples: falar com a TalentIA360 ou escolher um plano.
+        </p>
+
+        <div class="cta-buttons">
+          <a
+            href="https://wa.me/5511933663336?text=Oi%2C%20quero%20uma%20IA%20personalizada%20TalentIA360"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar no WhatsApp
+          </a>
+          <a
+            href="#planos"
+            class="btn btn-outline"
+          >
+            Ver planos da assistente
+          </a>
+        </div>
+
+        <p class="small" style="margin-top:1rem;">
+          WhatsApp: <strong>(11) 93366-3336</strong>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a
+    href="https://wa.me/5511933663336?text=Oi%2C%20quero%20uma%20IA%20personalizada%20TalentIA360"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <div class="footer-logo-text">TALENTIA360</div>
+    © <span id="ano"></span> TalentIA360 – A inteligência artificial que entende o seu negócio.
+  </footer>
+
+  <script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>        
+              
